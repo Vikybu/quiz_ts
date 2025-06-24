@@ -1,18 +1,41 @@
 
 
-const allAnswers = document.querySelectorAll('.option');
+function content() {
+    
+}
 
-let score = 0;
+function answer(params) {
+    
+}
 
+function score(params) {
+    
+}
 
-allAnswers.forEach(button => {
-  button.addEventListener('click', function () {
-    const isCorrect = button.getAttribute('correct_answer'); 
+function answerStyle(params) {
+    
+}
 
-    if (isCorrect === "true") {
-      score++;
-        
-    }
-  });
-});
-console.log(score)
+function disabledAnswer(params) {
+    
+}
+
+function buttonActivation(params) {
+    
+}
+
+function nextQuestion(params) {
+    
+}
+
+function scoreDisplay(params) {
+    
+}
+
+function rematch(params) {
+    
+}
+
+function reset (params) {
+    
+}
