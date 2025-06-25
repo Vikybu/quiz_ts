@@ -41,5 +41,7 @@ export const quizzic =
             ],
             correct_answer: "L'irlande"
         }
-]
+    ]
+
+
 
