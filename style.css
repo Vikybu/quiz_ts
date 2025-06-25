@@ -1,0 +1,37 @@
+
+body {
+     background : linear-gradient(#ED4264,#FFEDBC); 
+     min-height:100vh;
+
+}
+
+
+
+.question {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.option {
+  border-radius:25% 10%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.btn_suivant {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin : auto; 
+}
+
+
+
