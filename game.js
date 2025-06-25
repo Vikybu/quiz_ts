@@ -1,19 +1,92 @@
-import { /*nom de la variable de vivi*/ } from './questions.js' // Import des questions
+ import { quizzic } from './question.js';
 
-// Récupérer les emplacements pour injecter la question et les options
-const question = document.getElementById('.question');
-const option = document.getElementById('.option');
+let index = 0
+const question = document.querySelector('.question')
+const divResponse = document.querySelector('.option')
+function content() {
+    question.innerText = quizzic[index].text
+    quizzic[index].options.forEach(element => {
+        const btnAnswer = document.createElement('button')
+        btnAnswer.innerText = element
+        btnAnswer.classList.add('btn_answer')
+        if (element == quizzic[index].correct_answer)
+            btnAnswer.setAttribute('id', 'true')
+        divResponse.appendChild (btnAnswer)
+    })
+}
 
-// Récupérer la première question
-const firstQuestion = quiz_fatoumata_kebe.questions[0];
+content()
 
-// Injecter le texte de la question dans l'emplacement dédié
-question.innerText = ;
+const btn = document.querySelectorAll('.btn_answer')
 
-// Pour chaque option, créer un bouton et l'ajouter au conteneur
-firstQuestion.options.forEach(option => {
-  const option_btn = document.createElement('button');
-  option_btn.innerText = option;
-  option.classList.add('Je sais pas');
-  __________.appendChild(__________);
-});
+function answer(event) {
+
+    
+     /*  btn.forEach(element => {
+        console.log(btn.innerText)
+        if(element === quizzic[index].correct_answer)
+        {
+            console.log("true")
+            return true
+        }
+    })*/
+   if(event.target.getAttribute("data-id") === "correct_answer"){
+        
+         console.log("true")
+        return true
+       
+    }
+    else{
+        return false
+    }
+   
+    }
+
+
+
+ 
+
+
+
+answer()
+
+
+for(let i=0; i < btn.length; i++)
+{
+    btn[i].addEventListener("click", answer)
+}
+
+
+
+
+function score(params) {
+    
+}
+
+function answerStyle(params) {
+    
+}
+
+function disabledAnswer(params) {
+    
+}
+
+function buttonActivation(params) {
+    
+}
+
+function nextQuestion(params) {
+    
+}
+
+function scoreDisplay(params) {
+    
+}
+
+function rematch(params) {
+    
+}
+
+function reset (params) {
+    
+}

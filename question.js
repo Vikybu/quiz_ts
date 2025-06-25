@@ -1,5 +1,5 @@
-export const quizzic = {
-    questions: [
+export const quizzic = 
+     [
         {
             text: "C'est ki ki é la reine du game de la zik ?",
             options: [
@@ -42,4 +42,4 @@ export const quizzic = {
             correct_answer: "L'irlande"
         }
     ]
-}
+
