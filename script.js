@@ -1,4 +1,4 @@
- import { quizzic } from './question.js';
+import { quizzic } from './question.js';
 
 let index = 0
 const question = document.querySelector('.question')
@@ -10,8 +10,8 @@ function content() {
         btnAnswer.innerText = element
         btnAnswer.classList.add('btn_answer')
         if (element == quizzic[index].correct_answer)
-            btnAnswer.setAttribute('id', 'true')
-        divResponse.appendChild (btnAnswer)
+            btnAnswer.setAttribute('data-id', 'true')
+        divResponse.appendChild(btnAnswer)
     })
 }
 
@@ -19,74 +19,65 @@ content()
 
 const btn = document.querySelectorAll('.btn_answer')
 
-function answer(event) {
+function answer(clickBtn) {
 
-    
-     /*  btn.forEach(element => {
-        console.log(btn.innerText)
-        if(element === quizzic[index].correct_answer)
-        {
-            console.log("true")
-            return true
-        }
-    })*/
-   if(event.target.getAttribute("data-id") === "correct_answer"){
-        
-         console.log("true")
+    if (clickBtn.target.getAttribute("data-id") === "true") {
+
+        console.log("true")
         return true
-       
+
     }
-    else{
+    else {
+        console.log('false')
         return false
     }
-   
+
+}
+
+function scoreCount(clickBtn) {
+    let score = 0
+    if (clickBtn.target.getAttribute("data-id") === "true") {
+        score++
+        console.log(score)
     }
+}
 
-
-
- 
-
-
-
-answer()
-
-
-for(let i=0; i < btn.length; i++)
-{
-    btn[i].addEventListener("click", answer)
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", (click) => {
+        answer(click)
+        scoreCount(click)
+} )
 }
 
 
 
 
-function score(params) {
-    
-}
+
 
 function answerStyle(params) {
-    
+
 }
 
 function disabledAnswer(params) {
-    
+
 }
 
 function buttonActivation(params) {
-    
+
 }
 
 function nextQuestion(params) {
-    
+
 }
 
 function scoreDisplay(params) {
-    
+
 }
 
 function rematch(params) {
-    
+
 }
 
-function reset (params) {
-    
+function reset(params) {
+
 }
