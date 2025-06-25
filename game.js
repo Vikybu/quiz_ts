@@ -11,7 +11,7 @@ function content() {
         btnAnswer.innerText = element
         btnAnswer.classList.add('btn_answer')
         if (element == quizzic[index].correct_answer)
-            btnAnswer.setAttribute('id', 'true')
+            btnAnswer.setAttribute('data-id', 'true')
         divResponse.appendChild(btnAnswer)
 
     })
@@ -34,10 +34,23 @@ function clearQuestion() {
     console.log(btnAnswer)
 }
 
+function refreshAddEventListener(click) {
+     const btnAnswer = document.querySelectorAll('.btn_answer')
+    for (let i = 0; i < btnAnswer.length; i++) {
+    btnAnswer[i].addEventListener("click", (click) => {
+        answer(click)
+        scoreCount(click)
+        
+} )
+}
+    
+}
 button.addEventListener('click', () => {
     clearQuestion()
     nextQuestion()
     content()
+    refreshAddEventListener()
+
 })
 
 
