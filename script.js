@@ -1,30 +1,19 @@
-import { quizzic } from './question.js';
-
-
-
-
-
-
+let score = 0
 const btnAnswer = document.querySelectorAll('.btn_answer')
 
 function answer(clickBtn) {
 const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
-
         console.log("true")
         return true
-
     }
     else {
         console.log('false')
         return false
     }
-
 }
 
-
 function scoreCount(clickBtn) {
-    let score = 0
     const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
         score++
@@ -37,15 +26,12 @@ function refreshAddEventListener() {
     for (let i = 0; i < btnAnswer.length; i++) {
     btnAnswer[i].addEventListener("click", (click) => {
         answer(click)
-        scoreCount(click)
-        
+        scoreCount(click)  
 } )
 }
-    
 }
-refreshAddEventListener()
 
-
+export {answer, scoreCount, refreshAddEventListener}
 
 
 

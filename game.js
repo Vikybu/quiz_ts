@@ -3,6 +3,7 @@ import { quizzic } from './question.js'
 let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
+
 function content() {
     console.log('content loading')
     question.innerText = quizzic[index].text
@@ -16,16 +17,11 @@ function content() {
 
     })
 }
-content()
 
-
-let button = document.querySelector(".btn_suivant")
 function nextQuestion() {
-
     index++;
     console.log(index)
 };
-
 
 
 function clearQuestion() {
@@ -34,25 +30,8 @@ function clearQuestion() {
     console.log(btnAnswer)
 }
 
-function refreshAddEventListener(click) {
-     const btnAnswer = document.querySelectorAll('.btn_answer')
-    for (let i = 0; i < btnAnswer.length; i++) {
-    btnAnswer[i].addEventListener("click", (click) => {
-        answer(click)
-        scoreCount(click)
-        
-} )
-}
-    
-}
-button.addEventListener('click', () => {
-    clearQuestion()
-    nextQuestion()
-    content()
-    refreshAddEventListener()
 
-})
-
+export {content, nextQuestion, clearQuestion}
 
 
 
