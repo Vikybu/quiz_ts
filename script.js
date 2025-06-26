@@ -26,25 +26,51 @@ function scoreCount(clickBtn) {
 }
 
 
+<<<<<<< branch_ju
+function answerStyle(clickBtn) {
+   
+    if (clickBtn.target.getAttribute("data-id") === "true") { 
+        
+        clickBtn.target.style.border = "2px solid green"
+        clickBtn.target.style.backgroundColor = "#e8f5e8"
+    } else {
+        
+        clickBtn.target.style.border = "2px solid red"
+        clickBtn.target.style.backgroundColor = "#ffe8e8"
+    }
+}
+
+
+
+
+
+=======
+>>>>>>> main
 function refreshAddEventListener() {
      const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
     btnAnswer[i].addEventListener("click", (click) => {
         answer(click)
+<<<<<<< branch_ju
+        scoreCount(click) 
+        answerStyle(click) 
+        
+=======
         scoreCount(click)  
         disabledAnswer()
         buttonActivation()
+>>>>>>> main
 } )
+    
 }
 }
 
-export {answer, scoreCount, refreshAddEventListener}
+
+export {answer, scoreCount, answerStyle, refreshAddEventListener}
 
 
 
-function answerStyle(params) {
 
-}
 
 
 
