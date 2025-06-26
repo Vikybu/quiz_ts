@@ -22,9 +22,18 @@ title {
 
 
 
-.option {
+.btn_answer {
     border-radius: 25% 10%;
-    height: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.option {
+
+   height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
