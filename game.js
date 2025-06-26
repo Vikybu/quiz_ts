@@ -1,5 +1,6 @@
 import { quizzic } from './question.js'
 
+
 let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
