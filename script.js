@@ -1,6 +1,7 @@
-import {disabledAnswer,buttonActivation} from './game.js'
+import {disabledAnswer,buttonActivation,content} from './game.js'
 
 let score = 0
+let index = 0
 const btnAnswer = document.querySelectorAll('.btn_answer')
 let button = document.querySelector(".btn_suivant")
 
@@ -24,6 +25,17 @@ function scoreCount(clickBtn) {
         console.log(score)
     }
 }
+
+
+function reset () {
+    
+    score = 0
+    index = 0
+    content()
+    console.log(score,index)
+}
+
+
 
 
 function answerStyle(clickBtn) {
@@ -59,7 +71,7 @@ function refreshAddEventListener() {
 }
 
 
-export {answer, scoreCount, answerStyle, refreshAddEventListener}
+export {answer, scoreCount, answerStyle, refreshAddEventListener,reset}
 
 
 
@@ -77,6 +89,3 @@ function rematch(params) {
 
 }
 
-function reset(params) {
-
-}
