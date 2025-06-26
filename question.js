@@ -35,11 +35,11 @@ export const quizzic =
             text: "Quel pays a remporté 3 fois de suite l'eurovision entre 1992 et 1994 ?",
             options:[
                 "L'Irlande",
-                "L'italie",
+                "L'Italie",
                 "La France",
                 "La suède"
             ],
-            correct_answer: "L'irlande"
+            correct_answer: "L'Irlande"
         }
     ]
 

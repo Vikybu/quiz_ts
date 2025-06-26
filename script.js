@@ -36,19 +36,6 @@ function refreshAddEventListener() {
 export {answer, scoreCount, refreshAddEventListener}
 
 
-/*<script>
-   function load_js()
-   {
-      var head= document.getElementsByTagName('head')[0];
-      var script= document.createElement('script');
-      script.src= 'source_file.js';
-      head.appendChild(script);
-   }
-   load_js();
-</script>*/
-
-
-
 
 function answerStyle(params) {
 
