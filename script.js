@@ -15,9 +15,9 @@ function content() {
     })
 }
 
-content()
 
-const btn = document.querySelectorAll('.btn_answer')
+
+const btnAnswer = document.querySelectorAll('.btn_answer')
 
 function answer(clickBtn) {
 
@@ -42,14 +42,30 @@ function scoreCount(clickBtn) {
     }
 }
 
-for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("click", (click) => {
+function clearAddEventListenr(){
+    for (let i = 0; i < btnAnswer.length; i++) {
+    btnAnswer[i].addEventListener("DOMContentLoaded", "click", (click) => {
         answer(click)
         scoreCount(click)
 } )
+    
+}
 }
 
 
+
+
+
+/*<script>
+   function load_js()
+   {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.src= 'source_file.js';
+      head.appendChild(script);
+   }
+   load_js();
+</script>*/
 
 
 

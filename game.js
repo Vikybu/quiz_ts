@@ -11,13 +11,13 @@ function content() {
         btnAnswer.innerText = element
         btnAnswer.classList.add('btn_answer')
         if (element == quizzic[index].correct_answer)
-            btnAnswer.setAttribute('id', 'true')
+            btnAnswer.setAttribute('data-id', 'true')
         divResponse.appendChild(btnAnswer)
 
     })
 }
-content()
 
+content()
 
 let button = document.querySelector(".btn_suivant")
 function nextQuestion() {
@@ -38,6 +38,7 @@ button.addEventListener('click', () => {
     clearQuestion()
     nextQuestion()
     content()
+    
 })
 
 
