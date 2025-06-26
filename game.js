@@ -4,6 +4,10 @@ let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
 
+
+/**
+ * Affiche la question avec les 4 réponses tant que l'index est inférieur au nombre de questions
+ */
 function content() {
     console.log('content loading')
     if (index < quizzic.length) {
@@ -16,42 +20,47 @@ function content() {
             if (element == quizzic[index].correct_answer)
                 btnAnswer.setAttribute('data-id', 'true')
             divResponse.appendChild(btnAnswer)
-
         })
     } else {
-
         console.log('Fin du game')
     }
-
 }
 
+/**
+ * Incrémente de 1 l'index
+ */
 function nextQuestion() {
-    index++;
+    index++
+}
 
-};
 
-
+/**
+ * Efface le texte de la question et supprime les réponses
+ */
 function clearQuestion() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     btnAnswer.forEach((element) => element.remove())
     question.innerText = ''
 }
 
+
+/**
+ * Rend les boutons des réponses disabled
+ */
 function disabledAnswer() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     btnAnswer.forEach((element) => {
         element.disabled = true
-
-    }
+        }
     )
-
 }
 
+/**
+ * Rend le bouton suivant enabled
+ */
 function buttonActivation() {
     let button = document.querySelector(".btn_suivant")
     button.disabled = false
-
-
 }
 
 function buttonOff() {

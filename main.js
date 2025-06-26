@@ -3,14 +3,14 @@ import { refreshAddEventListener, resetScore } from './script.js'
 
 export let index = 0, score = 0
 
-let button = document.querySelector(".btn_suivant")
+let btnSuivant = document.querySelector(".btn_suivant")
 let rematch = document.querySelector('.rematch')
+
 content()
 
 refreshAddEventListener()
 
-
-button.addEventListener('click', () => {
+btnSuivant.addEventListener('click', () => {
     clearQuestion()
     nextQuestion()
     content()
