@@ -62,5 +62,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
     margin: 40px;
+
+    margin: auto;
+}
+
+.btn_replay {
+
+    visibility: hidden;
+
+
 }
