@@ -1,5 +1,5 @@
-export const quizzic = 
-     [
+export const quizzic =
+    [
         {
             text: "C'est ki ki é la reine du game de la zik ?",
             options: [
@@ -23,7 +23,7 @@ export const quizzic =
         },
         {
             text: "Quelle est l’origine de la création du logo des Rolling Stones ?",
-            options:[
+            options: [
                 "Un dessin d’Andy Warhol.",
                 "La déesse indienne Kali, la bouche de Mick Jagger et une langue tirée aux autorités.",
                 "Une blague entre les membres du groupe.",
@@ -33,7 +33,7 @@ export const quizzic =
         },
         {
             text: "Quel pays a remporté 3 fois de suite l'eurovision entre 1992 et 1994 ?",
-            options:[
+            options: [
                 "L'Irlande",
                 "L'Italie",
                 "La France",
