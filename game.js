@@ -1,6 +1,5 @@
 import { quizzic } from './question.js'
 
-
 let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
@@ -19,7 +18,7 @@ function content() {
             divResponse.appendChild(btnAnswer)
 
         })
-    } else  {
+    } else {
 
         console.log('Fin du game')
     }
@@ -35,7 +34,7 @@ function nextQuestion() {
 function clearQuestion() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     btnAnswer.forEach((element) => element.remove())
-    console.log(btnAnswer)
+    question.innerText = ''
 }
 
 function disabledAnswer() {
@@ -61,7 +60,13 @@ function buttonOff() {
 
 }
 
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff }
+function resetIndex() {
+    index = 0
+    content()
+    console.log(index)
+}
+
+export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex }
 
 
 
