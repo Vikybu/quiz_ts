@@ -1,4 +1,4 @@
-import {content, nextQuestion, clearQuestion} from './game.js'
+import {content, nextQuestion, clearQuestion, buttonOff} from './game.js'
 import {answer, scoreCount, refreshAddEventListener} from './script.js'
 
 let button = document.querySelector(".btn_suivant")
@@ -12,4 +12,5 @@ button.addEventListener('click', () => {
     nextQuestion()
     content()
     refreshAddEventListener()
+    buttonOff()
 })
