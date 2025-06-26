@@ -47,10 +47,16 @@ function refreshAddEventListener() {
      const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
     btnAnswer[i].addEventListener("click", (click) => {
+<<<<<<< HEAD
         answer(click) 
         answerStyle(click) 
         
         scoreCount(click)  
+=======
+        answer(click)
+        scoreCount(click) 
+        answerStyle(click)  
+>>>>>>> 3126e856108a42906befb9e6ae5110ca6ed33799
         disabledAnswer()
         buttonActivation()
 } )
