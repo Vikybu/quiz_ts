@@ -1,5 +1,8 @@
-import { disabledAnswer, buttonActivation } from "./game.js"
+import { disabledAnswer, buttonActivation, content } from './game.js'
+
+
 let score = 0
+
 const btnAnswer = document.querySelectorAll('.btn_answer')
 let button = document.querySelector('.btn_suivant')
 
@@ -47,6 +50,11 @@ if (score <= 1){
 }
 
 
+function resetScore() {
+    score = 0
+    console.log(score)
+}
+
 
 function answerStyle(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
@@ -60,6 +68,7 @@ function answerStyle(clickBtn) {
     }
 }
 
+
 function refreshAddEventListener() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
@@ -69,16 +78,10 @@ function refreshAddEventListener() {
             answerStyle(click)
             disabledAnswer()
             buttonActivation()
-            
+           
         })
     }
 }
 
-export { answer, scoreCount, answerStyle, refreshAddEventListener, scoreDisplay }
-
-
-
-
-
-
+export { answer, scoreCount, answerStyle, refreshAddEventListener, resetScore, scoreDisplay }
 

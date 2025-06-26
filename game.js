@@ -21,7 +21,7 @@ function content() {
             divResponse.appendChild(btnAnswer)
 
         })
-    } else  {
+    } else {
 
         console.log('Fin du game')
         scoreDisplay()
@@ -38,7 +38,7 @@ function nextQuestion() {
 function clearQuestion() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     btnAnswer.forEach((element) => element.remove())
-    console.log(btnAnswer)
+    question.innerText = ''
 }
 
 function disabledAnswer() {
@@ -71,7 +71,15 @@ if (index >= quizzic.length){
    button.style.visibility = "hidden"
 }
 }
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, rematch }
+
+function resetIndex() {
+    index = 0
+    content()
+    console.log(index)
+}
+
+export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch }
+
 
 
 
