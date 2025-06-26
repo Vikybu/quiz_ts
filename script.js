@@ -1,5 +1,9 @@
+import {disabledAnswer,buttonActivation} from './game.js'
+
 let score = 0
 const btnAnswer = document.querySelectorAll('.btn_answer')
+let button = document.querySelector(".btn_suivant")
+
 
 function answer(clickBtn) {
 const btnAnswer = document.querySelectorAll('.btn_answer')
@@ -22,6 +26,7 @@ function scoreCount(clickBtn) {
 }
 
 
+<<<<<<< branch_ju
 function answerStyle(clickBtn) {
    
     if (clickBtn.target.getAttribute("data-id") === "true") { 
@@ -39,14 +44,22 @@ function answerStyle(clickBtn) {
 
 
 
+=======
+>>>>>>> main
 function refreshAddEventListener() {
      const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
     btnAnswer[i].addEventListener("click", (click) => {
         answer(click)
+<<<<<<< branch_ju
         scoreCount(click) 
         answerStyle(click) 
         
+=======
+        scoreCount(click)  
+        disabledAnswer()
+        buttonActivation()
+>>>>>>> main
 } )
     
 }
@@ -59,17 +72,9 @@ export {answer, scoreCount, answerStyle, refreshAddEventListener}
 
 
 
-function disabledAnswer(params) {
 
-}
 
-function buttonActivation(params) {
 
-}
-
-function nextQuestion(params) {
-
-}
 
 function scoreDisplay(params) {
 
