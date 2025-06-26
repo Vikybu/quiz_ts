@@ -26,7 +26,6 @@ function scoreCount(clickBtn) {
 }
 
 
-<<<<<<< branch_ju
 function answerStyle(clickBtn) {
    
     if (clickBtn.target.getAttribute("data-id") === "true") { 
@@ -44,22 +43,15 @@ function answerStyle(clickBtn) {
 
 
 
-=======
->>>>>>> main
 function refreshAddEventListener() {
      const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
     btnAnswer[i].addEventListener("click", (click) => {
         answer(click)
-<<<<<<< branch_ju
         scoreCount(click) 
-        answerStyle(click) 
-        
-=======
-        scoreCount(click)  
+        answerStyle(click)  
         disabledAnswer()
         buttonActivation()
->>>>>>> main
 } )
     
 }
