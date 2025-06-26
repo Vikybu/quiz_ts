@@ -47,3 +47,9 @@ title {
     justify-content: space-around;
     margin: auto;
 }
+
+.btn_replay {
+
+    visibility: hidden;
+
+}
