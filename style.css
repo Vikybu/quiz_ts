@@ -4,7 +4,7 @@ body {
 
 }
 
-title {
+.title {
     height: 100px;
     display: flex;
     align-items: center;
@@ -25,10 +25,24 @@ title {
 .btn_answer {
     border-radius: 25% 10%;
     height: 100px;
-    display: flex;
     align-items: center;
     justify-content: center;
+     border-width:0;
+    margin: 10px;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    width: 400px;
+    cursor:pointer;
+    background: linear-gradient(#e3afaf,#DAE2F8)
+   
 
+
+}
+
+.btn_answer:hover{
+    cursor:pointer;
+    background-color:#83c0f8;
 }
 
 .option {
@@ -37,13 +51,16 @@ title {
     display: flex;
     align-items: center;
     justify-content: center;
+   flex-direction: column;
+
 
 }
 
 .btn_suivant {
+     border-radius: 15% 15% 15% 15%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: auto;
+    margin: 40px;
 }
