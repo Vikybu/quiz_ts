@@ -21,25 +21,43 @@ function scoreCount(clickBtn) {
     }
 }
 
+
+function answerStyle(clickBtn) {
+   
+    if (clickBtn.target.getAttribute("data-id") === "true") { 
+        
+        clickBtn.target.style.border = "2px solid green"
+        clickBtn.target.style.backgroundColor = "#e8f5e8"
+    } else {
+        
+        clickBtn.target.style.border = "2px solid red"
+        clickBtn.target.style.backgroundColor = "#ffe8e8"
+    }
+}
+
+
+
+
+
 function refreshAddEventListener() {
      const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
     btnAnswer[i].addEventListener("click", (click) => {
         answer(click)
-        scoreCount(click)  
+        scoreCount(click) 
+        answerStyle(click) 
+        
 } )
     
 }
 }
 
 
-export {answer, scoreCount, refreshAddEventListener}
+export {answer, scoreCount, answerStyle, refreshAddEventListener}
 
 
 
-function answerStyle(params) {
 
-}
 
 function disabledAnswer(params) {
 

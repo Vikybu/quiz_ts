@@ -1,5 +1,5 @@
 import {content, nextQuestion, clearQuestion} from './game.js'
-import {answer, scoreCount, refreshAddEventListener} from './script.js'
+import {answer, scoreCount, answerStyle, refreshAddEventListener} from './script.js'
 
 let button = document.querySelector(".btn_suivant")
 
