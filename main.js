@@ -6,7 +6,6 @@ export let index = 0, score = 0
 
 
 let button = document.querySelector(".btn_suivant")
-let rematch = document.querySelector('.rematch')
 content()
 
 refreshAddEventListener()
@@ -22,7 +21,7 @@ button.addEventListener('click', () => {
 })
 
 
-})
+
 
 rematch.addEventListener('click', () => {
     resetIndex()
