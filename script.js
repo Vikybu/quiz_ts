@@ -18,7 +18,6 @@ const btnAnswer = document.querySelectorAll('.btn_answer')
 }
 
 function scoreCount(clickBtn) {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
         score++
         console.log(score)
