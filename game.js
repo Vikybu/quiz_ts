@@ -1,8 +1,11 @@
 import { quizzic } from './question.js'
+import { scoreDisplay } from './script.js'
+
 
 let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
+const button = document.querySelector(".btn_suivant")
 
 function content() {
     console.log('content loading')
@@ -18,9 +21,10 @@ function content() {
             divResponse.appendChild(btnAnswer)
 
         })
-    } else  {
+    } else {
 
         console.log('Fin du game')
+        scoreDisplay()
     }
 
 }
@@ -34,7 +38,7 @@ function nextQuestion() {
 function clearQuestion() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     btnAnswer.forEach((element) => element.remove())
-    console.log(btnAnswer)
+    question.innerText = ''
 }
 
 function disabledAnswer() {
@@ -48,7 +52,6 @@ function disabledAnswer() {
 }
 
 function buttonActivation() {
-    let button = document.querySelector(".btn_suivant")
     button.disabled = false
 
 
@@ -58,9 +61,25 @@ function buttonOff() {
     let button = document.querySelector('.btn_suivant')
     button.disabled = true
 
+
 }
 
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff }
+function rematch() {
+let btn_replay = document.querySelector('.btn_replay')
+if (index >= quizzic.length){
+   btn_replay.style.visibility = "visible"
+   button.style.visibility = "hidden"
+}
+}
+
+function resetIndex() {
+    index = 0
+    content()
+    console.log(index)
+}
+
+export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch }
+
 
 
 
