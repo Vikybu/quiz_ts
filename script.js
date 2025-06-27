@@ -1,13 +1,8 @@
 import { disabledAnswer, buttonActivation, content } from './game.js'
 
-
 let score = 0
 
-const btnAnswer = document.querySelectorAll('.btn_answer')
-let button = document.querySelector('.btn_suivant')
-
 function answer(clickBtn) {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
         console.log("true")
         return true
@@ -19,7 +14,6 @@ function answer(clickBtn) {
 }
 
 function scoreCount(clickBtn) {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
         score++
         console.log(score)
