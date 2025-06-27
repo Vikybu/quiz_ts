@@ -46,7 +46,6 @@ if (score <= 1){
 
 function resetScore() {
     score = 0
-    console.log(score)
 }
 
 

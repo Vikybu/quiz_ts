@@ -17,6 +17,7 @@ btnSuivant.addEventListener('click', () => {
     refreshAddEventListener()
     buttonOff()
     rematch()
+    console.log('OK')
 })
 
 
