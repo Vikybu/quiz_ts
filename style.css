@@ -5,11 +5,14 @@ body {
 }
 
 .title {
+    font-family: 'Poppins', sans-serif;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: auto;
+    font-size: 60px ;
+    
 
 }
 
@@ -18,54 +21,66 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
 }
 
 
 
 .btn_answer {
-    border-radius: 25% 10%;
-    height: 100px;
+    background: linear-gradient(0.25turn, #FFEDBC, #ebf8e1, #ED4264) ;
+    color: #4e4c4c;
+    border-radius: 10% 10%;
+    padding: 24px 15px;
+    height: auto;
     align-items: center;
     justify-content: center;
-     border-width:0;
-    margin: 10px;
-    padding: 25px;
+    border-color: #FF4F79;
+    margin: 5px;
     text-align: center;
+    font-size: 16px;
+    font-weight: 600;
     display: flex;
-    width: 400px;
-    cursor:pointer;
-    background: linear-gradient(#e3afaf,#DAE2F8)
+    width: 600px;
+    cursor: pointer;
+    transition: all 0.3s ease;
    
-
 
 }
 
-.btn_answer:hover{
-    cursor:pointer;
-    background-color:#83c0f8;
+.btn_answer:hover {
+    cursor: pointer;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
 }
 
 .option {
 
-   height: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-   flex-direction: column;
+    flex-direction: column;
+    
 
 
 }
 
 .btn_suivant {
-     border-radius: 15% 15% 15% 15%;
+    border-radius: 15% 15% 15% 15%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-    margin: 40px;
-
     margin: auto;
+    margin-top: 90px;
+    background-color: #FF4F79;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px;
+
 }
 
 .btn_replay {
