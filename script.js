@@ -57,12 +57,11 @@ function refreshAddEventListener() {
 }
 
 
+function resetScore() {
+    score = 0
+}
+
 export {answer, scoreCount, answerStyle, refreshAddEventListener}
-
-
-
-
-
 
 
 
