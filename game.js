@@ -24,6 +24,7 @@ function content() {
         })
     } else {
         scoreDisplay()
+        
     }
 }
 
@@ -42,6 +43,7 @@ function clearQuestion() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     btnAnswer.forEach((element) => element.remove())
     question.innerText = ''
+    
 }
 
 
@@ -83,7 +85,21 @@ function resetIndex() {
     content()
 }
 
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch }
+function disableCadrequestion() {
+    if (index >= quizzic.length) {
+        document.querySelector(".question").style.visibility = "hidden";
+        console.log('Efface moi')
+    }
+    else {
+    
+        document.querySelector(".question").style.visibility = "visible"
+    }
+    
+}
+
+
+
+export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,disableCadrequestion }
 
 
 

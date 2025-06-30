@@ -62,11 +62,11 @@ clickBtn(APPEL PARAMETRE).target(CIBLE BOUTON).style(IMPLEMANTE DU CSS).border(V
 function answerStyle(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
 
-        clickBtn.target.style.border = "2px solid green"
+        clickBtn.target.style.border = "5px solid green"
         clickBtn.target.style.backgroundColor = "#E8F5E8"
     } else {
 
-        clickBtn.target.style.border = "2px solid red"
+        clickBtn.target.style.border = "5px solid red"
         clickBtn.target.style.backgroundColor = "#FFE8E8"
     }
 }
