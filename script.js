@@ -31,19 +31,19 @@ function scoreDisplay() {
     
 if (score <= 1){
     const messageScore = document.createElement('p')
-    messageScore.innerText = "oh no"
+    messageScore.innerText = 'Ton score est de ' + score + " Oh no"
     document.body.appendChild(messageScore)
       console.log('Essai encore')
     return "oh no"
 } if (score <= 3) {
     const messageScore = document.createElement('p')
-    messageScore.innerText = "Tu vas y arriver !!!"
+    messageScore.innerText = 'Ton score est de '+ score + " Tu vas y arriver !!!"
     document.body.appendChild(messageScore)
     console.log("Presque")
     return "Tu vas y arriver !!!"
 } else if (score == 4) {
     const messageScore = document.createElement('p')
-    messageScore.innerText = "Bravo !!!"
+    messageScore.innerText = 'Ton score est de ' + score + " Bravo !!!"
     document.body.appendChild(messageScore)
     console.log("Good job")
     return "Bravo !!!"
