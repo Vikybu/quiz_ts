@@ -21,7 +21,9 @@ btnSuivant.addEventListener('click', () => {
 })
 
 
+
 btnRematch.addEventListener('click', () => {
+
     resetIndex()
     resetScore()
     rematch()
