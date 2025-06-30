@@ -1,7 +1,11 @@
 import { disabledAnswer, buttonActivation, content } from './game.js'
 
 let score = 0
-
+/**
+ * Verifie si la réponse est true ou false et le retourne
+ * @param {*} clickBtn 
+ * @returns 
+ */
 function answer(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
         console.log("true")
@@ -19,24 +23,27 @@ function scoreCount(clickBtn) {
         console.log(score)
     }
 }
-
+/**
+ * Affiche le message + résultat dans une balise <P>
+ * @returns 
+ */
 function scoreDisplay() {
     
 if (score <= 1){
     const messageScore = document.createElement('p')
-    messageScore.innerText = "oh no"
+    messageScore.innerText = 'Ton score est de ' + score + " Oh no"
     document.body.appendChild(messageScore)
       console.log('Essai encore')
     return "oh no"
 } if (score <= 3) {
     const messageScore = document.createElement('p')
-    messageScore.innerText = "Tu vas y arriver !!!"
+    messageScore.innerText = 'Ton score est de '+ score + " Tu vas y arriver !!!"
     document.body.appendChild(messageScore)
     console.log("Presque")
     return "Tu vas y arriver !!!"
 } else if (score == 4) {
     const messageScore = document.createElement('p')
-    messageScore.innerText = "Bravo !!!"
+    messageScore.innerText = 'Ton score est de ' + score + " Bravo !!!"
     document.body.appendChild(messageScore)
     console.log("Good job")
     return "Bravo !!!"
@@ -49,7 +56,11 @@ function resetScore() {
     console.log(score)
 }
 
-
+/**
+ * rend la réponse true = vert
+ * false = rouge
+ * @param { } clickBtn 
+ */
 function answerStyle(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
 

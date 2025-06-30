@@ -66,7 +66,9 @@ function buttonActivation() {
 function buttonOff() {
     btnSuivant.disabled = true
 }
-
+/**
+ * Rend le bouton Rejouer visible seulement en fin de partie
+ */
 function rematch() {
     let btn_replay = document.querySelector('.btn_replay')
     if (index >= quizzic.length){
@@ -84,8 +86,3 @@ function resetIndex() {
 }
 
 export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch }
-
-
-
-
-
