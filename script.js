@@ -1,13 +1,8 @@
 import { disabledAnswer, buttonActivation, content } from './game.js'
 
-
 let score = 0
 
-const btnAnswer = document.querySelectorAll('.btn_answer')
-let button = document.querySelector('.btn_suivant')
-
 function answer(clickBtn) {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
         console.log("true")
         return true
@@ -19,7 +14,6 @@ function answer(clickBtn) {
 }
 
 function scoreCount(clickBtn) {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
     if (clickBtn.target.getAttribute("data-id") === "true") {
         score++
         console.log(score)
@@ -59,11 +53,11 @@ function resetScore() {
 function answerStyle(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
 
-        clickBtn.target.style.border = "2px solid green"
+        clickBtn.target.style.border = "5px solid green"
         clickBtn.target.style.backgroundColor = "#E8F5E8"
     } else {
 
-        clickBtn.target.style.border = "2px solid red"
+        clickBtn.target.style.border = "5px solid red"
         clickBtn.target.style.backgroundColor = "#FFE8E8"
     }
 }
