@@ -46,7 +46,6 @@ if (score <= 1){
 
 function resetScore() {
     score = 0
-    console.log(score)
 }
 
 
@@ -78,4 +77,3 @@ function refreshAddEventListener() {
 }
 
 export { answer, scoreCount, answerStyle, refreshAddEventListener, resetScore, scoreDisplay }
-
