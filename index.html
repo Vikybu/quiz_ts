@@ -9,19 +9,40 @@
     <script type="module" src=game.js defer></script> <!--mettre type "module"-->
     <script type="module" src=script.js defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Lavishly+Yours&family=Nova+Square&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Le Quizzik</title>
 </head>
 
+<nav>
+    <div id="div_nav">
+        <button class="btn_choix_quiz" id="btn_quizzic">
+            Quizzik : quiz sur le thème de la musique
+        </button>
+        <button class="btn_choix_quiz" id="btn_quizpotter">
+            Quizpotter : quiz sur le thème d'Harry Potter
+        </button>
+    </div>
+
+    
+</nav>
+
 <body>
-    <h1 class="title">Le Quizzik</h1>
-    <div class="question">
+    <div id="div_body">
+        <h1 class="title">Le Quizzik</h1>
+        <div class="question">
+          <progress id="progression" value="" max="100"></progress>
+        </div>
+
+        <div class="option">
+        </div>
+        <button class="btn_suivant" disabled>Suivant</button>
+
+        <button class="btn_replay" >Rejouer</button>
+
     </div>
 
-    <div class="option">
-    </div>
-    <button class="btn_suivant" disabled>Suivant</button>
-
-     <button class="btn_replay" >Rejouer</button>
 
 </body>
 

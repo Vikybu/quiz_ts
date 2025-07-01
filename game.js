@@ -1,12 +1,18 @@
-import { quizzic } from './question.js'
-import { scoreDisplay } from './script.js'
+import { quizzic, quizpotter } from './question.js'
+import { scoreDisplay, refreshAddEventListener, resetScore } from './script.js'
 
 
 let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
 const btnSuivant = document.querySelector(".btn_suivant")
-let timeoutID;
+let timeoutID
+const body = document.querySelector("body")
+const btnQuizzic = document.getElementById('btn_quizzic')
+const btnQuizpotter = document.getElementById('btn_quizpotter')
+const divGlobale = document.getElementById('div_body')
+let quizname = []
+
 /**
  * Affiche la question avec les 4 réponses tant que l'index est inférieur au nombre de questions
  */
@@ -24,12 +30,14 @@ function content() {
         document.body.appendChild(time)
         console.log(time)
         quizzic[index].options.forEach(element => {
+    if (index < quizname.length) {
+        question.innerText = quizname[index].text
+        quizname[index].options.forEach(element => {
             const btnAnswer = document.createElement('button')
             btnAnswer.innerText = element
             btnAnswer.classList.add('btn_answer')
             btnAnswer.disabled = false
-            
-            if (element == quizzic[index].correct_answer)
+            if (element == quizname[index].correct_answer)
                 btnAnswer.setAttribute('data-id', 'true')
             divResponse.appendChild(btnAnswer)
         })
@@ -61,7 +69,6 @@ function clearQuestion() {
     
 }
 
-
 /**
  * Rend les boutons des réponses disabled
  */
@@ -72,6 +79,7 @@ function disabledAnswer() {
         }
     )
 }
+
 
 /**
  * Rend le bouton suivant enabled
@@ -97,26 +105,116 @@ function rematch() {
     }
 }
 
+/**
+ * Permet de réinitialiser l'index à 0
+ */
 function resetIndex() {
     index = 0
+ 
     content()
 }
 
+
+/**
+ * Gère l'affichage ou pas du cadre contenant la question
+ */
 function disableCadrequestion() {
     if (index > quizzic.length) {
         document.querySelector(".question").style.visibility = "hidden";
-        console.log('Efface moi')
+
     }
     else {
     
         document.querySelector(".question").style.visibility = "visible"
+       
     }
     
 }
 
+function progression () {
+    
+  if (index < quizzic.length) {
+    document.getElementById('progression').style.visibility = 'visible'
+   document.getElementById('progression').value = index * 25
 
 
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch, disableCadrequestion }
+  }
+else {
+    document.getElementById('progression').style.visibility = 'hidden'
+}
+}
+
+
+
+/**
+ * Gère l'affichage à l'ouverture du site
+ */
+function accueil() {
+    body.style.visibility = "hidden"
+    btnQuizzic.style.visibility = "visible"
+    btnQuizpotter.style.visibility = "visible"
+}
+
+
+/**
+ * Permet d'attribuer à la variable globale quizname le quizz selon le bouton sur lequel l'user a cliqué + 
+ * affichage du body de l'HTML
+ */
+function loadGame(event) {
+    if (event.target.getAttribute("id") === "btn_quizzic") {
+        quizname = quizzic
+        if (divGlobale.classList.contains("hp")) {
+            divGlobale.classList.remove("hp")
+        }
+        divGlobale.classList.add('musik')
+    } else {
+        quizname = quizpotter
+        if (divGlobale.classList.contains( "musik")) {
+            divGlobale.classList.remove("musik")
+        }
+        divGlobale.classList.add('hp')
+    }
+    body.style.visibility = "visible"
+}
+
+/*
+function styleQuizChange(event) {
+    if (event.target.getAttribute("id") === "musik") { 
+        divGlobale.classList.replace("musik", "hp")
+    } else if (event.target.getAttribute("id") === "hp") {
+        divGlobale.classList.replace("hp", "musik")
+        console.log('ok')
+    }
+}
+    */
+
+/**
+ * Au click du choix du quiz auquel jouer, cette fonction permet de :
+ *  - réinitialiser l'index à 0 si l'on clique après avoir commencé le quiz
+ *  - Effacer l'affiche des questions et boutons précédents
+ *  - Afficher le quiz associé au boton cliqué
+ *  - Afficher la question et les réponses
+ *  - Exécuté la fonction refreshAddEventListener
+ */
+function quizChoice() {
+    let btnChoixQuiz = document.querySelectorAll('.btn_choix_quiz')
+    for (let i = 0; i < btnChoixQuiz.length; i++) {
+        btnChoixQuiz[i].addEventListener('click', (event) => {
+            if (index != 0) {
+                resetIndex()
+                resetScore()
+            } 
+        clearQuestion()
+        loadGame(event)
+        content()
+        refreshAddEventListener()
+        })
+    }
+}
+
+
+export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
+    disableCadrequestion, accueil, quizChoice, progression }
 
 
 
