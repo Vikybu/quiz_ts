@@ -1,15 +1,17 @@
 #div_body {
     min-height: 100vh;
-
    align-items: center;
-
 }
 
+body {
+    margin: 0px;
+}
 
 #div_nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: pink;
 }
 
 #div_body.musik {
@@ -42,7 +44,7 @@
 
 #div_body.musik .question {
     background: linear-gradient(0.25turn,  #ED4264,#ebf8e1 ,#FFEDBC);
-    margin-top: 80px;
+    margin-top: 25px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -53,6 +55,8 @@
     border: 1px solid black;
     border-radius: 15% 15% 15% 15%;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+    width: 800px;
+    margin: auto;
 }
 
 
@@ -61,7 +65,7 @@
     background: linear-gradient(0.25turn, #FFEDBC, #ebf8e1, #ED4264) ;
     color: #4e4c4c;
     border-radius: 10% 10%;
-    height: auto;
+    height: 50px;
     border-color: #FF4F79;
     margin : 4px;
     font-family: 'Poppins', sans-serif;
@@ -86,33 +90,34 @@
 }
 
 #div_body.musik .option {
-
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 100px;
-    
+    margin-top: 40px;
 
+}
 
+#div_body.musik .container_boutons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 30px;
 }
 
 #div_body.musik .btn_suivant {
     border-radius: 15% 15% 15% 15%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-    margin-top: 90px;
+    height: 50px;
+    width: 100px;
     background-color: #FF4F79;
     color: white;
     font-size: 16px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    
 
 }
 
@@ -126,12 +131,8 @@
 
     visibility: hidden;
      border-radius: 15% 15% 15% 15%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-    margin-top: 20px;
+    height: 50px;
+    width: 100px;
     background-color: #FF4F79;
     color: white;
     font-size: 16px;
@@ -230,7 +231,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 80px;
 
 }
 
@@ -284,7 +285,7 @@
   border: none; 
   width: 200px;
   margin-left: 380px;
-  margin-top: 10px;
+  margin-top: 30px;
   
   border-radius: 10em;
   background: var(--color);
