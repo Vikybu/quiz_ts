@@ -7,11 +7,11 @@ body {
     margin: 0px;
 }
 
-#div_nav {
+#div_nav.musik {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: pink;
+    background: #ED4264;
 }
 
 #div_body.musik {
@@ -59,7 +59,18 @@ body {
     margin: auto;
 }
 
+#div_body.musik .container_timer_prog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
 
+#div_body.musik #timer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
 
 #div_body.musik .btn_answer {
     background: linear-gradient(0.25turn, #FFEDBC, #ebf8e1, #ED4264) ;
@@ -95,17 +106,23 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 30px;
 
 }
 
-#div_body.musik .container_boutons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin: auto;
-    margin-top: 30px;
+#div_body.musik .div_suivant {
+    position: absolute;
+    top: 500px;
+    left: 435px;
+    z-index: 1;
+}
+
+
+#div_body.musik .div_replay {
+    position: absolute;
+    top: 500px;
+    left: 435px;
+    z-index: 2;
 }
 
 #div_body.musik .btn_suivant {
@@ -150,13 +167,34 @@ body {
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
-    background: linear-gradient(0.25turn, #FFEDBC,#ebf8e1, #4f92ff);
+    background: linear-gradient(0.25turn,  #ED4264,#ebf8e1 ,#FFEDBC);
     height: 50px;
+    width: 600px;
     padding-top: 15px;
-    margin-top: 60px;
+    margin-top: -150px;
     border-radius: 15% 15% 15% 15%;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
     }
+
+#div_nav.hp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #554a3d;
+}
+
+#div_body.hp .container_timer_prog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+#div_body.hp #timer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
 
 #div_body.hp .btn_choix_quiz {
     border-radius: 10px;
@@ -235,6 +273,17 @@ body {
 
 }
 
+
+#div_body.hp .container_boutons {
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+}
+
 #div_body.hp .btn_suivant {
     border-radius: 15% 15% 15% 15%;
     height: 100px;
@@ -284,9 +333,6 @@ body {
   display: flex;
   border: none; 
   width: 200px;
-  margin-left: 380px;
-  margin-top: 30px;
-  
   border-radius: 10em;
   background: var(--color);
 

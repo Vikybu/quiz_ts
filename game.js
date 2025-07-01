@@ -3,35 +3,44 @@ import { scoreDisplay, refreshAddEventListener, resetScore } from './script.js'
 
 
 let index = 0
+let timeoutID
+let quizname = []
+let startTimer = 5
+
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
 const btnSuivant = document.querySelector(".btn_suivant")
-let timeoutID
 const body = document.querySelector("body")
 const btnQuizzic = document.getElementById('btn_quizzic')
 const btnQuizpotter = document.getElementById('btn_quizpotter')
 const divGlobale = document.getElementById('div_body')
-let quizname = []
+const divNav = document.getElementById('div_nav')
+const divTimer = document.getElementById('timer')
+
 
 /**
  * Affiche la question avec les 4 réponses tant que l'index est inférieur au nombre de questions
  */
 function content() {
-    if (index < quizzic.length) {
-        question.innerText = quizzic[index].text
+    if (index < quizname.length) {
+        question.innerText = quizname[index].text
+        clearInterval(timeoutID)
+        startTimer = 5
+        timeoutID = setInterval(affichageCompteARebours, 1000)
+        
+        /*
         clearTimeout(timeoutID);
         timeoutID = setTimeout(() => {
             disabledAnswer()
             buttonActivation()
-            console.log("timer on")
+            console.log(timeoutID)
         }, 5000);
+
         const time = document.createElement('button')
         time.innerText = timeoutID
-        document.body.appendChild(time)
-        console.log(time)
-        quizzic[index].options.forEach(element => {
-    if (index < quizname.length) {
-        question.innerText = quizname[index].text
+        divTimer.appendChild(time)
+        */
+
         quizname[index].options.forEach(element => {
             const btnAnswer = document.createElement('button')
             btnAnswer.innerText = element
@@ -43,60 +52,71 @@ function content() {
         })
     } else {
         scoreDisplay()
-        
+
     }
 }
 
-
-
+function affichageCompteARebours(){
+    const timer = document.getElementById('timer')
+    timer.innerText = `Temps restant : ${startTimer}`
+    startTimer--
+    if (index >= quizname.length) {
+        timer.innerText = ''
+    }
+    if (startTimer < 0) {
+        disabledAnswer()
+        buttonActivation()
+        clearInterval(timeoutID)
+    }
+}
 
 
 /**
  * Incrémente de 1 l'index
  */
 function nextQuestion() {
-    index++
-}
+                index++
+            }
 
 
 /**
  * Efface le texte de la question et supprime les réponses
  */
 function clearQuestion() {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
-    btnAnswer.forEach((element) => element.remove())
-    question.innerText = ''
-    
-}
+                const btnAnswer = document.querySelectorAll('.btn_answer')
+                btnAnswer.forEach((element) => element.remove())
+                question.innerText = ''
+
+            }
 
 /**
  * Rend les boutons des réponses disabled
  */
 function disabledAnswer() {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
-    btnAnswer.forEach((element) => {
-        element.disabled = true
-        }
-    )
-}
+                const btnAnswer = document.querySelectorAll('.btn_answer')
+                btnAnswer.forEach((element) => {
+                    element.disabled = true
+                }
+                )
+            }
 
 
 /**
  * Rend le bouton suivant enabled
  */
 function buttonActivation() {
-    btnSuivant.disabled = false
-}
+                btnSuivant.disabled = false
+            }
 
 function buttonOff() {
-    btnSuivant.disabled = true
-}
+                btnSuivant.disabled = true
+            }
 /**
  * Rend le bouton Rejouer visible seulement en fin de partie
  */
 function rematch() {
     let btn_replay = document.querySelector('.btn_replay')
-    if (index >= quizzic.length){
+    if (index >= quizzic.length) {
         btn_replay.style.visibility = "visible"
         btnSuivant.style.visibility = "hidden"
     } else {
@@ -110,7 +130,7 @@ function rematch() {
  */
 function resetIndex() {
     index = 0
- 
+
     content()
 }
 
@@ -119,29 +139,29 @@ function resetIndex() {
  * Gère l'affichage ou pas du cadre contenant la question
  */
 function disableCadrequestion() {
-    if (index > quizzic.length) {
+    if (index >= quizzic.length) {
         document.querySelector(".question").style.visibility = "hidden";
 
     }
     else {
-    
+
         document.querySelector(".question").style.visibility = "visible"
-       
+
     }
-    
+
 }
 
-function progression () {
+function progression() {
+
+    if (index < quizzic.length) {
+        document.getElementById('progression').style.visibility = 'visible'
+        document.getElementById('progression').value = index * 25
     
-  if (index < quizzic.length) {
-    document.getElementById('progression').style.visibility = 'visible'
-   document.getElementById('progression').value = index * 25
 
-
-  }
-else {
-    document.getElementById('progression').style.visibility = 'hidden'
-}
+    }
+    else {
+        document.getElementById('progression').style.visibility = 'hidden'
+    }
 }
 
 
@@ -150,10 +170,10 @@ else {
  * Gère l'affichage à l'ouverture du site
  */
 function accueil() {
-    body.style.visibility = "hidden"
-    btnQuizzic.style.visibility = "visible"
-    btnQuizpotter.style.visibility = "visible"
-}
+                body.style.visibility = "hidden"
+                btnQuizzic.style.visibility = "visible"
+                btnQuizpotter.style.visibility = "visible"
+            }
 
 
 /**
@@ -163,30 +183,24 @@ function accueil() {
 function loadGame(event) {
     if (event.target.getAttribute("id") === "btn_quizzic") {
         quizname = quizzic
-        if (divGlobale.classList.contains("hp")) {
+        if (divGlobale.classList.contains("hp") ) {
             divGlobale.classList.remove("hp")
+            divNav.classList.remove('hp')
         }
         divGlobale.classList.add('musik')
+        divNav.classList.add('musik')
     } else {
         quizname = quizpotter
-        if (divGlobale.classList.contains( "musik")) {
+        if (divGlobale.classList.contains("musik")) {
             divGlobale.classList.remove("musik")
+            divNav.classList.remove('musik')
         }
         divGlobale.classList.add('hp')
+        divNav.classList.add('hp')
     }
     body.style.visibility = "visible"
 }
 
-/*
-function styleQuizChange(event) {
-    if (event.target.getAttribute("id") === "musik") { 
-        divGlobale.classList.replace("musik", "hp")
-    } else if (event.target.getAttribute("id") === "hp") {
-        divGlobale.classList.replace("hp", "musik")
-        console.log('ok')
-    }
-}
-    */
 
 /**
  * Au click du choix du quiz auquel jouer, cette fonction permet de :
@@ -203,18 +217,20 @@ function quizChoice() {
             if (index != 0) {
                 resetIndex()
                 resetScore()
-            } 
-        clearQuestion()
-        loadGame(event)
-        content()
-        refreshAddEventListener()
+            }
+            clearQuestion()
+            loadGame(event)
+            content()
+            refreshAddEventListener()
         })
     }
 }
 
 
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
-    disableCadrequestion, accueil, quizChoice, progression }
+export {
+            content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
+            disableCadrequestion, accueil, quizChoice, progression
+        }
 
 
 
