@@ -1,5 +1,5 @@
 import { content, nextQuestion, clearQuestion, buttonOff, resetIndex, rematch, disableCadrequestion } from './game.js'
-import { refreshAddEventListener, resetScore } from './script.js'
+import { refreshAddEventListener, resetScore, scoreDisplay, clearScoreContent } from './script.js'
 
 export let index = 0, score = 0
 
@@ -18,7 +18,6 @@ btnSuivant.addEventListener('click', () => {
     buttonOff()
     rematch()
     disableCadrequestion()
-
     console.log('OK')
 })
 
@@ -30,5 +29,7 @@ btnRematch.addEventListener('click', () => {
     resetScore()
     rematch()
     refreshAddEventListener()
+    clearScoreContent()
+
 })
 

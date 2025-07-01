@@ -18,7 +18,7 @@ function answer(clickBtn) {
 
 /*Cette fonction recup le btn true et ajoute 1 si cliqué*/
 function scoreCount(clickBtn) {
-    if (clickBtn.target.getAttribute("data-id") === "true") {
+    if (answer(clickBtn)) {
         score++
         console.log(score)
     }
@@ -31,24 +31,31 @@ function scoreDisplay() {
     
 if (score <= 1){
     const messageScore = document.createElement('p')
-    messageScore.innerText = 'Ton score est de ' + score + " Oh no"
+    messageScore.id= "messageScore"
+    messageScore.innerText = 'Ton score est de ' + score + ", oh no..."
     document.body.appendChild(messageScore)
       console.log('Essai encore')
-    return "oh no"
-} if (score <= 3) {
+    return messageScore
+    }
+
+ if (score <= 3) {
     const messageScore = document.createElement('p')
-    messageScore.innerText = 'Ton score est de '+ score + " Tu vas y arriver !!!"
+    messageScore.id= "messageScore"
+    messageScore.innerText = 'Ton score est de '+ score + ", tu vas y arriver !!"
     document.body.appendChild(messageScore)
-    console.log("Presque")
-    return "Tu vas y arriver !!!"
+      console.log("Presque")
+    return messageScore
+    
 } else if (score == 4) {
     const messageScore = document.createElement('p')
-    messageScore.innerText = 'Ton score est de ' + score + " Bravo !!!"
+    messageScore.id= "messageScore"
+    messageScore.innerText = 'Ton score est de ' + score + ", Bravo !!!"
     document.body.appendChild(messageScore)
     console.log("Good job")
-    return "Bravo !!!"
+    return messageScore
 }
 }
+
 
 /*Cette fonction permet de reset le score a zero simple efficace ya quoi! */
 function resetScore() {
@@ -60,7 +67,7 @@ clickBtn(APPEL PARAMETRE).target(CIBLE ICI UN BOUTON).getAttribute("data-id")(RE
 et ce qui se passe dans les accolade donc 
 clickBtn(APPEL PARAMETRE).target(CIBLE BOUTON).style(IMPLEMANTE DU CSS).border(VALEUR CSS) = "2px solid green" */
 function answerStyle(clickBtn) {
-    if (clickBtn.target.getAttribute("data-id") === "true") {
+    if (answer(clickBtn)) {
 
         clickBtn.target.style.border = "5px solid green"
         clickBtn.target.style.backgroundColor = "#E8F5E8"
@@ -84,10 +91,24 @@ function refreshAddEventListener() {
             answerStyle(click)
             disabledAnswer()
             buttonActivation()
-           
+            
         })
     }
 }
 
-/*Permet de lier les données entre plusieurs page HTML*/
-export { answer, scoreCount, answerStyle, refreshAddEventListener, resetScore, scoreDisplay } 
+
+
+
+
+function clearScoreContent() {
+   
+    const messageScore = document.querySelector("#messageScore")
+    messageScore.remove()
+
+   }
+
+
+ 
+
+/*Permet de lier les données entre plusieurs page JS*/
+export { answer, scoreCount, answerStyle, refreshAddEventListener, resetScore, scoreDisplay, clearScoreContent } 
