@@ -44,4 +44,46 @@ export const quizzic =
     ]
 
 
-
+export const quizpotter =
+    [
+        {
+            text: "Combien d'Horcruxe possédait Celui-dont-on-ne-doit-pas-prononcer-le-nom ?",
+            options: [
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            correct_answer: "7"
+        },
+        {
+            text: "Il existe 3 types de balles au quidditch, quel est l'intrus ?",
+            options: [
+                "Vif d'or",
+                "Vif d'argent",
+                "Cognard",
+                "Souaffle"
+            ],
+            correct_answer: "Vif d'argent"
+        },
+        {
+            text: "Quel horcruxe Hermione détruit-elle ?",
+            options: [
+                "La coupe de Poufssoufle",
+                "La bague des Gaunt",
+                "Le médaillon de Salazar Serpentard",
+                "Le journal intime de Tom Jedusor"
+            ],
+            correct_answer: "La coupe de Poufssoufle"
+        },
+        {
+            text: "Quel est le prénom du phénix de Dumbledore ?",
+            options: [
+                "Fumsek",
+                "Buck",
+                "Croutard",
+                "Fumnix"
+            ],
+            correct_answer: "Fumsek"
+        }
+    ]

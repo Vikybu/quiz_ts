@@ -1,4 +1,5 @@
-import { content, nextQuestion, clearQuestion, buttonOff, resetIndex, rematch, disableCadrequestion } from './game.js'
+import { content, nextQuestion, clearQuestion, buttonOff, resetIndex, rematch, disableCadrequestion, accueil, 
+    quizChoice} from './game.js'
 import { refreshAddEventListener, resetScore } from './script.js'
 
 export let index = 0, score = 0
@@ -6,9 +7,9 @@ export let index = 0, score = 0
 let btnSuivant = document.querySelector(".btn_suivant")
 let btnRematch = document.querySelector('.btn_replay')
 
-content()
 
-refreshAddEventListener()
+accueil()
+quizChoice()
 
 btnSuivant.addEventListener('click', () => {
     clearQuestion()
@@ -18,17 +19,14 @@ btnSuivant.addEventListener('click', () => {
     buttonOff()
     rematch()
     disableCadrequestion()
-
-    console.log('OK')
 })
 
 
-
 btnRematch.addEventListener('click', () => {
-
     resetIndex()
     resetScore()
     rematch()
     refreshAddEventListener()
+    disableCadrequestion()
 })
 

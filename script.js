@@ -16,6 +16,7 @@ function answer(clickBtn) {
     }
 }
 
+
 /*Cette fonction recup le btn true et ajoute 1 si cliqué*/
 function scoreCount(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
@@ -23,6 +24,7 @@ function scoreCount(clickBtn) {
         console.log(score)
     }
 }
+
 
 /*Cette fonction nous permet de comparer le score avec une valeur nombre pour savoir si on connait tout sur la musique ou non.
 On appel notre variable "score" pour lui donner des conditions avec des "if" pour que en fonction du score obtenu au quizzik
@@ -50,10 +52,12 @@ if (score <= 1){
 }
 }
 
+
 /*Cette fonction permet de reset le score a zero simple efficace ya quoi! */
 function resetScore() {
     score = 0
 }
+
 
 /*Cette fonction permet d'inplanter du CSS de manière dynamique avec en condition
 clickBtn(APPEL PARAMETRE).target(CIBLE ICI UN BOUTON).getAttribute("data-id")(RECUPERE L'ATTRIBUE ICI "data-id") === "true") 
@@ -70,6 +74,7 @@ function answerStyle(clickBtn) {
         clickBtn.target.style.backgroundColor = "#FFE8E8"
     }
 }
+
 
 /*Cette fonction permet de de refreshAddEventListener faire une boucle pour que le code ce réexecute ! 
 la var btnAnswer permet de recup tout les bouton ayant la classe '.btn_answer'
