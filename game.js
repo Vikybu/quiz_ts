@@ -6,6 +6,7 @@ let index = 0
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
 const btnSuivant = document.querySelector(".btn_suivant")
+let timeoutID
 const body = document.querySelector("body")
 const btnQuizzic = document.getElementById('btn_quizzic')
 const btnQuizpotter = document.getElementById('btn_quizpotter')
@@ -16,6 +17,19 @@ let quizname = []
  * Affiche la question avec les 4 réponses tant que l'index est inférieur au nombre de questions
  */
 function content() {
+    if (index < quizzic.length) {
+        question.innerText = quizzic[index].text
+        clearTimeout(timeoutID);
+        timeoutID = setTimeout(() => {
+            disabledAnswer()
+            buttonActivation()
+            console.log("timer on")
+        }, 5000);
+        const time = document.createElement('button')
+        time.innerText = timeoutID
+        document.body.appendChild(time)
+        console.log(time)
+        quizzic[index].options.forEach(element => {
     if (index < quizname.length) {
         question.innerText = quizname[index].text
         quizname[index].options.forEach(element => {
@@ -32,6 +46,10 @@ function content() {
         
     }
 }
+
+
+
+
 
 /**
  * Incrémente de 1 l'index
@@ -101,7 +119,7 @@ function resetIndex() {
  * Gère l'affichage ou pas du cadre contenant la question
  */
 function disableCadrequestion() {
-    if (index >= quizzic.length) {
+    if (index > quizzic.length) {
         document.querySelector(".question").style.visibility = "hidden";
 
     }
@@ -197,7 +215,6 @@ function quizChoice() {
 
 export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
     disableCadrequestion, accueil, quizChoice, progression }
-
 
 
 
