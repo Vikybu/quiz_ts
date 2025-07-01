@@ -1,7 +1,7 @@
 import { disabledAnswer, buttonActivation, content } from './game.js'
 
 let score = 0
-
+const divResponse = document.querySelector('.option')
 
 /*Cette fonction permet de savoir si une réponse est juste ou non. On recup nos boutons avec l'attribue "data-id"
  met des conditions if et else. Simple efficace ! bim bam boomk*/
@@ -35,8 +35,7 @@ if (score <= 1){
     const messageScore = document.createElement('p')
     messageScore.id= "messageScore"
     messageScore.innerText = 'Ton score est de ' + score + ", oh no..."
-    document.body.appendChild(messageScore)
-      console.log('Essai encore')
+    divResponse.appendChild(messageScore)
     return messageScore
     }
 
@@ -44,16 +43,14 @@ if (score <= 1){
     const messageScore = document.createElement('p')
     messageScore.id= "messageScore"
     messageScore.innerText = 'Ton score est de '+ score + ", tu vas y arriver !!"
-    document.body.appendChild(messageScore)
-      console.log("Presque")
+    divResponse.appendChild(messageScore)
     return messageScore
     
 } else if (score == 4) {
     const messageScore = document.createElement('p')
     messageScore.id= "messageScore"
     messageScore.innerText = 'Ton score est de ' + score + ", Bravo !!!"
-    document.body.appendChild(messageScore)
-    console.log("Good job")
+    divResponse.appendChild(messageScore)
     return messageScore
 }
 }
@@ -108,7 +105,7 @@ function clearScoreContent() {
    
     const messageScore = document.querySelector("#messageScore")
     messageScore.remove()
-
+    console.log('ca efface')
    }
 
 
