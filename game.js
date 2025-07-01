@@ -82,24 +82,40 @@ function rematch() {
 
 function resetIndex() {
     index = 0
+ 
     content()
 }
 
 function disableCadrequestion() {
     if (index >= quizzic.length) {
         document.querySelector(".question").style.visibility = "hidden";
-        console.log('Efface moi')
+        
     }
     else {
     
         document.querySelector(".question").style.visibility = "visible"
+       
     }
     
 }
 
+function progression () {
+    
+  if (index < quizzic.length) {
+    document.getElementById('progression').style.visibility = 'visible'
+   document.getElementById('progression').value = index * 25
 
 
-export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,disableCadrequestion }
+  }
+else {
+    document.getElementById('progression').style.visibility = 'hidden'
+}
+}
+
+
+
+
+export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,disableCadrequestion, progression}
 
 
 
