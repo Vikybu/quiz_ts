@@ -92,6 +92,7 @@ function rematch() {
  */
 function resetIndex() {
     index = 0
+ 
     content()
 }
 
@@ -102,13 +103,29 @@ function resetIndex() {
 function disableCadrequestion() {
     if (index >= quizzic.length) {
         document.querySelector(".question").style.visibility = "hidden";
+
     }
     else {
     
         document.querySelector(".question").style.visibility = "visible"
+       
     }
     
 }
+
+function progression () {
+    
+  if (index < quizzic.length) {
+    document.getElementById('progression').style.visibility = 'visible'
+   document.getElementById('progression').value = index * 25
+
+
+  }
+else {
+    document.getElementById('progression').style.visibility = 'hidden'
+}
+}
+
 
 
 /**
@@ -177,8 +194,10 @@ function quizChoice() {
     }
 }
 
+
 export { content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
-    disableCadrequestion, accueil, quizChoice }
+    disableCadrequestion, accueil, quizChoice, progression }
+
 
 
 
