@@ -2,6 +2,7 @@ import { disabledAnswer, buttonActivation, content } from './game.js'
 
 let score = 0
 const divScore = document.getElementById('score')
+const timer = document.getElementById('timer')
 
 /*Cette fonction permet de savoir si une réponse est juste ou non. On recup nos boutons avec l'attribue "data-id"
  met des conditions if et else. Simple efficace ! bim bam boomk*/
@@ -28,14 +29,17 @@ On appel notre variable "score" pour lui donner des conditions avec des "if" pou
 il y ai le score qui s'affiche et un message placé dans un p de manière dynamique avec JS. */
 function scoreDisplay() {
     if (score <= 1){
-        divScore.innerText = 'Ton score est de ' + score + ", oh no..."
+        divScore.innerText = 'Ton score est de ' + score + ", Oh no 🥺"
+        timer.innerText = ''
         }
 
     else if (score <= 3) {
-        divScore.innerText = 'Ton score est de '+ score + ", tu vas y arriver !!"
+        divScore.innerText = 'Ton score est de '+ score + ", Tu vas y arriver !! 🙂"
+        timer.innerText = ''
         
     } else if (score == 4) {
-        divScore.innerText = 'Ton score est de ' + score + ", Bravo !!!"  
+        divScore.innerText = 'Ton score est de ' + score + ", Bravo !!! 😎"  
+        timer.innerText = ''
     }
 
 }

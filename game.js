@@ -68,6 +68,7 @@ function affichageCompteARebours() {
     startTimer--
     if (index >= quizname.length) {
         timer.innerText = ''
+        console.log('ok')
     }
     if (startTimer < 0) {
         disabledAnswer()
@@ -197,8 +198,8 @@ function accueil() {
 function loadGame(event) {
     if (event.target.getAttribute("id") === "btn_quizzic") {
         quizname = quizzic
-        title_quizpotter.style.visibility = "hidden"
-        title_quizzic.style.visibility = "visible"
+        title_quizpotter.style.display = "none"
+        title_quizzic.style.display = "flex"
         if
             (divGlobale.classList.contains("hp")) {
             divGlobale.classList.remove("hp")
@@ -209,8 +210,8 @@ function loadGame(event) {
         divNav.classList.add('musik')
     } else {
         quizname = quizpotter
-        title_quizpotter.style.visibility = "visible"
-        title_quizzic.style.visibility = "hidden"
+        title_quizpotter.style.display = "flex"
+        title_quizzic.style.display = "none"
         if (divGlobale.classList.contains("musik")) {
             divGlobale.classList.remove("musik")
             divNav.classList.remove('musik')
@@ -244,6 +245,7 @@ function quizChoice() {
             refreshAddEventListener()
             rematch()
             progression()
+            clearScoreContent()
             divScore.innerText = ''
         })
     }
