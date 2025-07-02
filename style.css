@@ -2,7 +2,7 @@
 
 #div_body {
     min-height: 100vh;
-   align-items: center;
+    align-items: center;
 }
 
 body {
@@ -53,7 +53,7 @@ progress[value]::-webkit-progress-value {
     border-radius: 20px;
     font-size: 15px;
     border-color: #FF4F79;
-    margin : 4px;
+    margin: 4px;
     padding: 8px;
     font-family: 'Poppins', sans-serif;
     background: #FFEDBC;
@@ -68,11 +68,11 @@ progress[value]::-webkit-progress-value {
     align-items: center;
     justify-content: space-around;
     margin: auto;
-    font-size: 60px ;
+    font-size: 60px;
 }
 
 #div_body.musik .question {
-    background: linear-gradient(0.25turn,  #ED4264,#ebf8e1 ,#FFEDBC);
+    background: linear-gradient(0.25turn, #ED4264, #ebf8e1, #FFEDBC);
     margin-top: 25px;
     height: 50px;
     display: flex;
@@ -102,12 +102,12 @@ progress[value]::-webkit-progress-value {
 }
 
 #div_body.musik .btn_answer {
-    background: linear-gradient(0.25turn, #FFEDBC, #ebf8e1, #ED4264) ;
+    background: linear-gradient(0.25turn, #FFEDBC, #ebf8e1, #ED4264);
     color: #4e4c4c;
     border-radius: 10% 10%;
     height: 50px;
     border-color: #FF4F79;
-    margin : 4px;
+    margin: 4px;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     letter-spacing: -1.2px;
@@ -120,7 +120,7 @@ progress[value]::-webkit-progress-value {
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 20px 10px;
-   
+
 
 }
 
@@ -164,8 +164,9 @@ progress[value]::-webkit-progress-value {
 #div_body.musik .btn_suivant:hover {
 
 
-     transform: translateY(-4px);
+    transform: translateY(-4px);
 }
+
 
 #div_body.musik .btn_replay {
 
@@ -180,7 +181,6 @@ progress[value]::-webkit-progress-value {
     box-shadow: 0 4px 6px #0e1fd133;
     padding: 20px 10px;
 
-
 }
 
 #div_body.musik #messageScore {
@@ -190,14 +190,14 @@ progress[value]::-webkit-progress-value {
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
-    background: linear-gradient(0.25turn,  #ED4264,#ebf8e1 ,#FFEDBC);
+    background: linear-gradient(0.25turn, #474847, #8b8b8b);
     height: 50px;
     width: 600px;
     padding-top: 15px;
     margin-top: -150px;
     border-radius: 15% 15% 15% 15%;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
-    }
+}
 
 
  /*CSS QUIZ HARRY POTER*/
@@ -227,13 +227,14 @@ progress[value]::-webkit-progress-value {
     border-radius: 10px;
     font-size: 15px;
     border-color: black;
-    margin : 4px;
+    margin: 4px;
     padding: 8px;
     font-family: 'Poppins', sans-serif;
     background: #FFEDBC;
 }
 
 #div_body.hp {
+
     background: linear-gradient(0.25turn,#6cb474, #abd29c)
 }
 
@@ -264,20 +265,19 @@ progress[value]::-webkit-progress-value {
 }
 
 #div_body.hp .btn_answer {
-    background: #582524 ;
+    background: linear-gradient(0.25turn, #e8b639,#ccfcfc);
     color: #957e4c;
     border-radius: 10% 10%;
     height: auto;
     align-items: center;
     justify-content: center;
-    border-color: #582524;
-    margin : 4px;
+    border-color: #76580d;
+    margin: 4px;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     letter-spacing: -1.2px;
     word-spacing: 1.2px;
     color: #000000;
-    
     display: flex;
     width: 600px;
     cursor: pointer;
@@ -329,19 +329,19 @@ progress[value]::-webkit-progress-value {
 }
 
 #div_body.hp .btn_suivant:hover {
-     transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 #div_body.hp .btn_replay {
     display: none;
+
      border-radius: 15% 15% 15% 15%;
     height: 100px;
-    display: flex;
     align-items: center;
     justify-content: space-around;
     margin: auto;
     margin-top: 20px;
-    background-color: #FF4F79;
+    background-color: #4c503a;
     color: white;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -349,6 +349,31 @@ progress[value]::-webkit-progress-value {
     padding: 20px 10px;
 
 
+}
+
+#progression[value] {
+    --color: linear-gradient(#fff8, #fff0), repeating-linear-gradient(135deg, #0003 0 10px, #0000 0 20px),
+        #31c6f7;
+    --background: lightgrey;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    border: none;
+    width: 200px;
+    border-radius: 10em;
+    background: var(--color);
+
+}
+
+progress[value]::-webkit-progress-bar {
+    border-radius: 10em;
+    background: var(--background);
+}
+
+progress[value]::-webkit-progress-value {
+    border-radius: 10em;
+    background: var(--color);
 }
 
 #div_body.hp #messageScore {
@@ -366,3 +391,4 @@ progress[value]::-webkit-progress-value {
     border-radius: 15% 15% 15% 15%;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
     }
+
