@@ -2,11 +2,49 @@
 
 #div_body {
     min-height: 100vh;
-    align-items: center;
+
+   align-items: center;
+  
+
 }
+
+ html {
+      background: radial-gradient( #6cb474,#ED4264 );
+     
+    }
+
 
 body {
     margin: 0px;
+}
+
+
+
+.btn_choix_quiz {
+    
+
+   
+ border-radius: 0 0 20px 20px;
+ font-weight: 600;
+ 
+
+}
+
+.btn_choix_quiz:hover {
+   padding: 15px; 
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(4px);
+  transition: all 0.4s ease;
+}
+
+#btn_quizzic {
+
+     background-color: #ED4264;
+}
+
+#btn_quizpotter {
+
+     background-color: #6cb474;
 }
 
 #progression[value] {
@@ -36,12 +74,14 @@ progress[value]::-webkit-progress-value {
 
 /*CSS QUIZ MUSIK*/
 
+
 #div_nav.musik {
     display: flex;
     align-items: center;
     justify-content: space-around;
     background: #ED4264;
 }
+
 
 #div_body.musik {
     background: linear-gradient(#ED4264, #FFEDBC);
@@ -148,6 +188,8 @@ progress[value]::-webkit-progress-value {
 
 }
 
+
+
 #div_body.musik .btn_suivant {
     border-radius: 15% 15% 15% 15%;
     height: 50px;
@@ -166,6 +208,13 @@ progress[value]::-webkit-progress-value {
 
     transform: translateY(-4px);
 }
+#div_body.musik .container_btn_suivant_replay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+
 
 
 #div_body.musik .btn_replay {
@@ -352,17 +401,19 @@ progress[value]::-webkit-progress-value {
 }
 
 #progression[value] {
-    --color: linear-gradient(#fff8, #fff0), repeating-linear-gradient(135deg, #0003 0 10px, #0000 0 20px),
-        #31c6f7;
-    --background: lightgrey;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: flex;
-    border: none;
-    width: 200px;
-    border-radius: 10em;
-    background: var(--color);
+
+  --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,rgba(225, 7, 7, 0.545) 0 10px,#0000 0 20px),
+    #31c6f7;
+  --background: lightgrey; 
+ -webkit-appearance:none;
+  -moz-appearance:none;        
+  appearance: none;
+  display: flex;
+  border: none; 
+  width: 200px;
+  border-radius: 10em;
+  background: var(--color);
+
 
 }
 
