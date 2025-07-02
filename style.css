@@ -1,17 +1,18 @@
 /*CSS GENERAL*/
 
+html {
+      background: radial-gradient( #6cb474,#ED4264 );
+
+    }
+
 #div_body {
     min-height: 100vh;
-
-   align-items: center;
-  
-
+    align-items: center;
 }
 
  html {
-      background: radial-gradient( #6cb474,#ED4264 );
-     
-    }
+    background: radial-gradient( #6cb474,#ED4264 );   
+}
 
 
 body {
@@ -21,13 +22,10 @@ body {
 
 
 .btn_choix_quiz {
-    
-
-   
- border-radius: 0 0 20px 20px;
- font-weight: 600;
- 
-
+    border-radius: 0 0 20px 20px;
+    font-weight: 600;
+    border-radius: 0 0 20px 20px;
+    font-weight: 600;
 }
 
 .btn_choix_quiz:hover {
@@ -62,8 +60,8 @@ body {
   width: 200px;
   border-radius: 10em;
   background: var(--color);
-
 }
+
 progress[value]::-webkit-progress-bar {
   border-radius: 10em;
   background: var(--background);
@@ -205,10 +203,9 @@ progress[value]::-webkit-progress-value {
 }
 
 #div_body.musik .btn_suivant:hover {
-
-
     transform: translateY(-4px);
 }
+
 #div_body.musik .container_btn_suivant_replay {
     display: flex;
     flex-direction: row;
@@ -274,8 +271,6 @@ progress[value]::-webkit-progress-value {
     align-items: center;
     justify-content: center;
     gap: 0px;
-    
-    
 }
 
 #div_body.hp #timer {
@@ -306,8 +301,7 @@ progress[value]::-webkit-progress-value {
     align-items: center;
     justify-content: space-around;
     margin: auto;
-    font-size: 60px ;
-    
+    font-size: 60px ;    
 }
 
 #div_body.hp .question {
@@ -347,7 +341,6 @@ progress[value]::-webkit-progress-value {
     transition: all 0.3s ease;
     padding: 20px 10px;
     font-weight: 600;
-
 }
 
 #div_body.hp .btn_answer:hover {
@@ -362,7 +355,6 @@ progress[value]::-webkit-progress-value {
     justify-content: center;
     flex-direction: column;
     margin-top: 30px;
-
 }
 
 
@@ -416,20 +408,17 @@ progress[value]::-webkit-progress-value {
 }
 
 #progression[value] {
-
-  --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,rgba(225, 7, 7, 0.545) 0 10px,#0000 0 20px),
+    --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,rgba(225, 7, 7, 0.545) 0 10px,#0000 0 20px),
     #31c6f7;
-  --background: lightgrey; 
- -webkit-appearance:none;
-  -moz-appearance:none;        
-  appearance: none;
-  display: flex;
-  border: none; 
-  width: 200px;
-  border-radius: 10em;
-  background: var(--color);
-
-
+    --background: lightgrey; 
+    -webkit-appearance:none;
+    -moz-appearance:none;        
+    appearance: none;
+    display: flex;
+    border: none; 
+    width: 200px;
+    border-radius: 10em;
+    background: var(--color);
 }
 
 progress[value]::-webkit-progress-bar {
@@ -457,4 +446,4 @@ progress[value]::-webkit-progress-value {
     margin-top: -50px;
     border-radius: 15% 15% 15% 15%;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
-    }
+}

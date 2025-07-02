@@ -1,6 +1,7 @@
 import { disabledAnswer, buttonActivation, content } from './game.js'
 
 let score = 0
+
 const divScore = document.getElementById('score')
 const timer = document.getElementById('timer')
 
@@ -9,8 +10,7 @@ const timer = document.getElementById('timer')
 function answer(clickBtn) {
     if (clickBtn.target.getAttribute("data-id") === "true") {
         return true
-    }
-    else {
+    } else {
         return false
     }
 }
@@ -28,7 +28,7 @@ function scoreCount(clickBtn) {
 On appel notre variable "score" pour lui donner des conditions avec des "if" pour que en fonction du score obtenu au quizzik
 il y ai le score qui s'affiche et un message placé dans un p de manière dynamique avec JS. */
 function scoreDisplay() {
-    if (score <= 1){
+    if (score <= 1) {
         divScore.innerText = 'Ton score est de ' + score + ", Oh no 🥺"
         timer.innerText = ''
         }

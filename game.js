@@ -1,5 +1,5 @@
 import { quizzic, quizpotter } from './question.js'
-import { scoreDisplay, refreshAddEventListener, resetScore} from './script.js'
+import { scoreDisplay, refreshAddEventListener, resetScore } from './script.js'
 
 
 let index = 0
@@ -26,7 +26,6 @@ const title_quizpotter = document.getElementById('title_quizpotter')
  */
 function content() {
     if (index < quizname.length) {
-
         question.innerText = quizname[index].text
         clearInterval(timeoutID)
         startTimer = 15
@@ -188,8 +187,19 @@ function accueil() {
     body.style.visibility = "hidden"
     btnQuizzic.style.visibility = "visible"
     btnQuizpotter.style.visibility = "visible"
+
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "100px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "300px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "50px"))
 }
 
+
+function styleNavBar() {
+    document.getElementById("div_nav").style.height = "27px"
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "0px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "0px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "15px"))
+}
 
 /**
  * Permet d'attribuer à la variable globale quizname le quizz selon le bouton sur lequel l'user a cliqué + 
@@ -246,6 +256,7 @@ function quizChoice() {
             rematch()
             progression()
             clearScoreContent()
+            styleNavBar()
             divScore.innerText = ''
         })
     }
@@ -254,7 +265,7 @@ function quizChoice() {
 
 export {
     content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
-    disableCadrequestion, accueil, quizChoice, progression, clearScoreContent, title_quizpotter, title_quizzic
+    disableCadrequestion, accueil, quizChoice, progression, clearScoreContent, styleNavBar
 }
 
 
