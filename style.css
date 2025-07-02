@@ -110,19 +110,13 @@ body {
 
 }
 
-#div_body.musik .div_suivant {
-    position: absolute;
-    top: 500px;
-    left: 435px;
-    z-index: 1;
-}
+#div_body.musik .container_btn_suivant_replay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
 
-
-#div_body.musik .div_replay {
-    position: absolute;
-    top: 500px;
-    left: 435px;
-    z-index: 2;
 }
 
 #div_body.musik .btn_suivant {
@@ -145,8 +139,6 @@ body {
 }
 
 #div_body.musik .btn_replay {
-
-    visibility: hidden;
      border-radius: 15% 15% 15% 15%;
     height: 50px;
     width: 100px;
@@ -156,8 +148,14 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px #0e1fd133;
     padding: 20px 10px;
+    
+}
 
-
+#score {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    margin: auto;
 }
 
 #messageScore {
@@ -274,10 +272,8 @@ body {
 }
 
 
-#div_body.hp .container_boutons {
+#div_body.hp .container_btn_suivant_replay {
     display: flex;
-    overflow: auto;
-    position: absolute;
     flex-direction: row;
     justify-content: center;
     align-content: center;
@@ -305,7 +301,7 @@ body {
 }
 
 #div_body.hp .btn_replay {
-    visibility: hidden;
+    display: none;
      border-radius: 15% 15% 15% 15%;
     height: 100px;
     display: flex;
