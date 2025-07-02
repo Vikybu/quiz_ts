@@ -1,3 +1,5 @@
+/*CSS GENERAL*/
+
 #div_body {
     min-height: 100vh;
     align-items: center;
@@ -6,6 +8,33 @@
 body {
     margin: 0px;
 }
+
+#progression[value] {
+  --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,#0003 0 10px,#0000 0 20px),
+    #31c6f7;
+  --background: lightgrey; 
+ -webkit-appearance:none;
+  -moz-appearance:none;        
+  appearance: none;
+  display: flex;
+  border: none; 
+  width: 200px;
+  border-radius: 10em;
+  background: var(--color);
+
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+
+/*CSS QUIZ MUSIK*/
 
 #div_nav.musik {
     display: flex;
@@ -110,19 +139,13 @@ body {
 
 }
 
-#div_body.musik .div_suivant {
-    position: absolute;
-    top: 500px;
-    left: 435px;
-    z-index: 1;
-}
+#div_body.musik .container_btn_suivant_replay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
 
-
-#div_body.musik .div_replay {
-    position: absolute;
-    top: 500px;
-    left: 435px;
-    z-index: 2;
 }
 
 #div_body.musik .btn_suivant {
@@ -144,16 +167,23 @@ body {
     transform: translateY(-4px);
 }
 
-#div_body.musik .container_btn_suivant_replay {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin-top: 30px;
+
+#div_body.musik .btn_replay {
+
+    display: none;
+    border-radius: 15% 15% 15% 15%;
+    height: 50px;
+    width: 100px;
+    background-color: #FF4F79;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px #0e1fd133;
+    padding: 20px 10px;
 
 }
 
-#messageScore {
+#div_body.musik #messageScore {
 
     color: #535353;
     text-align: center;
@@ -169,6 +199,9 @@ body {
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
 }
 
+
+ /*CSS QUIZ HARRY POTER*/
+
 #div_nav.hp {
     display: flex;
     align-items: center;
@@ -182,6 +215,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0px;
+    
 }
 
 #div_body.hp #timer {
@@ -200,7 +234,8 @@ body {
 }
 
 #div_body.hp {
-    background: linear-gradient(#357234, #FFEDBC);
+
+    background: linear-gradient(0.25turn,#6cb474, #abd29c)
 }
 
 #div_body.hp .title {
@@ -210,11 +245,12 @@ body {
     align-items: center;
     justify-content: space-around;
     margin: auto;
-    font-size: 60px;
+    font-size: 60px ;
+    
 }
 
 #div_body.hp .question {
-    background: linear-gradient(0.25turn,#ccfcfc, #e8b639);
+    background: linear-gradient(#d6c510, #FFEDBC);
     margin-top: 80px;
     height: 50px;
     display: flex;
@@ -298,7 +334,8 @@ body {
 
 #div_body.hp .btn_replay {
     display: none;
-    border-radius: 15% 15% 15% 15%;
+
+     border-radius: 15% 15% 15% 15%;
     height: 100px;
     align-items: center;
     justify-content: space-around;
@@ -338,3 +375,20 @@ progress[value]::-webkit-progress-value {
     border-radius: 10em;
     background: var(--color);
 }
+
+#div_body.hp #messageScore {
+
+    color: #535353;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    background: linear-gradient(0.25turn,  #030101,#ebf8e1 ,#FFEDBC);
+    height: 50px;
+    width: 600px;
+    padding-top: 15px;
+    margin-top: -150px;
+    border-radius: 15% 15% 15% 15%;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+    }
+
