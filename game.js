@@ -16,6 +16,9 @@ const btnQuizpotter = document.getElementById('btn_quizpotter')
 const divGlobale = document.getElementById('div_body')
 const divNav = document.getElementById('div_nav')
 const divScore = document.getElementById('score')
+const divTimer = document.getElementById('timer')
+const title_quizzic = document.getElementById('title_quizzic')
+const title_quizpotter = document.getElementById('title_quizpotter')
 
 
 /**
@@ -23,11 +26,12 @@ const divScore = document.getElementById('score')
  */
 function content() {
     if (index < quizname.length) {
+
         question.innerText = quizname[index].text
         clearInterval(timeoutID)
         startTimer = 15
         timeoutID = setInterval(affichageCompteARebours, 1000)
-        
+
         /*
         clearTimeout(timeoutID);
         timeoutID = setTimeout(() => {
@@ -58,7 +62,7 @@ function content() {
     }
 }
 
-function affichageCompteARebours(){
+function affichageCompteARebours() {
     const timer = document.getElementById('timer')
     timer.innerText = `Temps restant : ${startTimer}`
     startTimer--
@@ -114,7 +118,6 @@ function buttonOff() {
     btnSuivant.disabled = true
 }
 
-
 /**
  * Rend le bouton Rejouer visible seulement en fin de partie
  */
@@ -123,6 +126,7 @@ function rematch() {
     if (index >= quizname.length) {
         btn_replay.style.display = "block"
         btnSuivant.style.display = "none"
+
     } else {
         btn_replay.style.display = "none"
         btnSuivant.style.display = "block"
@@ -168,7 +172,9 @@ function progression() {
     if (index < quizname.length) {
         document.getElementById('progression').style.visibility = 'visible'
         document.getElementById('progression').value = index * 25
+
     } else {
+
         document.getElementById('progression').style.visibility = 'hidden'
     }
 }
@@ -178,27 +184,33 @@ function progression() {
  * Gère l'affichage à l'ouverture du site
  */
 function accueil() {
-                body.style.visibility = "hidden"
-                btnQuizzic.style.visibility = "visible"
-                btnQuizpotter.style.visibility = "visible"
-            }
+    body.style.visibility = "hidden"
+    btnQuizzic.style.visibility = "visible"
+    btnQuizpotter.style.visibility = "visible"
+}
 
 
 /**
  * Permet d'attribuer à la variable globale quizname le quizz selon le bouton sur lequel l'user a cliqué + 
- * affichage du body de l'HTML
+ * affichage du body de l'HTML  
  */
 function loadGame(event) {
     if (event.target.getAttribute("id") === "btn_quizzic") {
         quizname = quizzic
-        if (divGlobale.classList.contains("hp") ) {
+        title_quizpotter.style.visibility = "hidden"
+        title_quizzic.style.visibility = "visible"
+        if
+            (divGlobale.classList.contains("hp")) {
             divGlobale.classList.remove("hp")
             divNav.classList.remove('hp')
+
         }
         divGlobale.classList.add('musik')
         divNav.classList.add('musik')
     } else {
         quizname = quizpotter
+        title_quizpotter.style.visibility = "visible"
+        title_quizzic.style.visibility = "hidden"
         if (divGlobale.classList.contains("musik")) {
             divGlobale.classList.remove("musik")
             divNav.classList.remove('musik')
@@ -214,7 +226,7 @@ function loadGame(event) {
  * Au click du choix du quiz auquel jouer, cette fonction permet de :
  *  - réinitialiser l'index à 0 si l'on clique après avoir commencé le quiz
  *  - Effacer l'affiche des questions et boutons précédents
- *  - Afficher le quiz associé au boton cliqué
+ *  - Afficher le quiz associé au bouton cliqué
  *  - Afficher la question et les réponses
  *  - Exécuté la fonction refreshAddEventListener
  */
@@ -239,9 +251,9 @@ function quizChoice() {
 
 
 export {
-            content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
-            disableCadrequestion, accueil, quizChoice, progression, clearScoreContent
-        }
+    content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
+    disableCadrequestion, accueil, quizChoice, progression, clearScoreContent, title_quizpotter, title_quizzic
+}
 
 
 

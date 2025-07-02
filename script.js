@@ -37,6 +37,7 @@ function scoreDisplay() {
     } else if (score == 4) {
         divScore.innerText = 'Ton score est de ' + score + ", Bravo !!!"  
     }
+
 }
 
 
@@ -71,16 +72,14 @@ function refreshAddEventListener() {
     const btnAnswer = document.querySelectorAll('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
         btnAnswer[i].addEventListener("click", (click) => {
-            answer(click)
             scoreCount(click)
             answerStyle(click)
             disabledAnswer()
             buttonActivation()
-            
+
         })
     }
 }
-
 
 /*Permet de lier les données entre plusieurs page JS*/
 export { answer, scoreCount, answerStyle, refreshAddEventListener, resetScore, scoreDisplay}
