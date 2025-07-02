@@ -1,11 +1,11 @@
 import { quizzic, quizpotter } from './question.js'
-import { scoreDisplay, refreshAddEventListener, resetScore } from './script.js'
+import { scoreDisplay, refreshAddEventListener, resetScore} from './script.js'
 
 
 let index = 0
 let timeoutID
 let quizname = []
-let startTimer = 5
+let startTimer = 15
 
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
@@ -15,6 +15,7 @@ const btnQuizzic = document.getElementById('btn_quizzic')
 const btnQuizpotter = document.getElementById('btn_quizpotter')
 const divGlobale = document.getElementById('div_body')
 const divNav = document.getElementById('div_nav')
+const divScore = document.getElementById('score')
 const divTimer = document.getElementById('timer')
 const title_quizzic = document.getElementById('title_quizzic')
 const title_quizpotter = document.getElementById('title_quizpotter')
@@ -28,7 +29,7 @@ function content() {
 
         question.innerText = quizname[index].text
         clearInterval(timeoutID)
-        startTimer = 5
+        startTimer = 15
         timeoutID = setInterval(affichageCompteARebours, 1000)
 
         /*
@@ -52,10 +53,12 @@ function content() {
             if (element == quizname[index].correct_answer)
                 btnAnswer.setAttribute('data-id', 'true')
             divResponse.appendChild(btnAnswer)
+            disableCadrequestion()
         })
     } else {
         scoreDisplay()
-
+        clearScoreContent()
+        disableCadrequestion()
     }
 }
 
@@ -114,26 +117,30 @@ function buttonActivation() {
 function buttonOff() {
     btnSuivant.disabled = true
 }
+
 /**
  * Rend le bouton Rejouer visible seulement en fin de partie
  */
 function rematch() {
     let btn_replay = document.querySelector('.btn_replay')
     if (index >= quizname.length) {
-        btn_replay.style.visibility = "visible"
-        btnSuivant.style.visibility = "hidden"
+        btn_replay.style.display = "block"
+        btnSuivant.style.display = "none"
+
     } else {
-        btn_replay.style.visibility = "hidden"
-        btnSuivant.style.visibility = "visible"
+        btn_replay.style.display = "none"
+        btnSuivant.style.display = "block"
+
     }
 }
+
 
 /**
  * Permet de réinitialiser l'index à 0
  */
 function resetIndex() {
     index = 0
-
+    document.getElementById('progression').value = index * 25
     content()
 }
 
@@ -144,15 +151,21 @@ function resetIndex() {
 function disableCadrequestion() {
     if (index >= quizname.length) {
         document.querySelector(".question").style.visibility = "hidden";
-
-    }
-    else {
-
+    } else {
         document.querySelector(".question").style.visibility = "visible"
-
     }
 
 }
+
+
+function clearScoreContent() {
+    if (index < quizname.length) {
+        divScore.style.display = 'none'
+    } else {
+        divScore.style.display = 'flex'
+    }
+}
+
 
 function progression() {
 
@@ -160,13 +173,11 @@ function progression() {
         document.getElementById('progression').style.visibility = 'visible'
         document.getElementById('progression').value = index * 25
 
+    } else {
 
-    }
-    else {
         document.getElementById('progression').style.visibility = 'hidden'
     }
 }
-
 
 
 /**
@@ -231,6 +242,9 @@ function quizChoice() {
             loadGame(event)
             content()
             refreshAddEventListener()
+            rematch()
+            progression()
+            divScore.innerText = ''
         })
     }
 }
@@ -238,7 +252,7 @@ function quizChoice() {
 
 export {
     content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
-    disableCadrequestion, accueil, quizChoice, progression, title_quizpotter, title_quizzic
+    disableCadrequestion, accueil, quizChoice, progression, clearScoreContent, title_quizpotter, title_quizzic
 }
 
 

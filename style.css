@@ -184,10 +184,8 @@ progress[value]::-webkit-progress-value {
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    margin-top: 30px;
-
+    margin-top: 30px
 }
-
 
 
 #div_body.musik .btn_suivant {
@@ -218,7 +216,6 @@ progress[value]::-webkit-progress-value {
 
 
 #div_body.musik .btn_replay {
-
     display: none;
     border-radius: 15% 15% 15% 15%;
     height: 50px;
@@ -229,7 +226,15 @@ progress[value]::-webkit-progress-value {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px #0e1fd133;
     padding: 20px 10px;
+    
+}
 
+
+#score {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    margin: auto;
 }
 
 #div_body.musik #messageScore {
@@ -351,10 +356,8 @@ progress[value]::-webkit-progress-value {
 }
 
 
-#div_body.hp .container_boutons {
+#div_body.hp .container_btn_suivant_replay {
     display: flex;
-    overflow: auto;
-    position: absolute;
     flex-direction: row;
     justify-content: center;
     align-content: center;
@@ -383,8 +386,7 @@ progress[value]::-webkit-progress-value {
 
 #div_body.hp .btn_replay {
     display: none;
-
-     border-radius: 15% 15% 15% 15%;
+    border-radius: 15% 15% 15% 15%;
     height: 100px;
     align-items: center;
     justify-content: space-around;
