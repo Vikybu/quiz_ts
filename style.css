@@ -49,18 +49,18 @@ body {
 }
 
 #progression[value] {
- 
-  --color: linear-gradient(#ED4264,#cab0b5), repeating-linear-gradient(135deg,#6cb474 0 10px,#6cb474 0 20px),
-    #6cb474;
-  --background: lightgrey; 
- -webkit-appearance:none;
-  -moz-appearance:none;        
-  appearance: none;
-  display: flex;
-  border: none; 
-  width: 200px;
-  border-radius: 10em;
-  background: var(--color);
+
+    --color: linear-gradient(#fff8,#89aa8d), repeating-linear-gradient(135deg,rgba(0, 0, 0, 0.697) 0 10px,#0000 0 20px),
+    #ED4264;
+    --background: lightgrey; 
+    -webkit-appearance:none;
+    -moz-appearance:none;        
+    appearance: none;
+    display: flex;
+    border: none; 
+    width: 200px;
+    border-radius: 10em;
+    background: var(--color);
 }
 
 progress[value]::-webkit-progress-bar {
