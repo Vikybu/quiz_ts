@@ -188,7 +188,7 @@ function accueil() {
     btnQuizzic.style.visibility = "visible"
     btnQuizpotter.style.visibility = "visible"
 
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "100px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "250px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "300px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "50px"))
 }
