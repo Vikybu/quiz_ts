@@ -1,11 +1,11 @@
 export const quizzic =
     [
         {
-            text: "C'est ki ki é la reine du game de la zik ?",
+            text: "A votre avis, qui est la reine de la musique ?",
             options: [
-                "Ma daronne",
-                "Mon daron",
-                "Elisabeth BORNE",
+                "Britney Spears",
+                "Fletcher",
+                "Pomme",
                 "La Queen B of course"
             ],
             correct_answer: "La Queen B of course"
