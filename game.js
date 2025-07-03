@@ -22,7 +22,9 @@ const title_quizpotter = document.getElementById('title_quizpotter')
 
 
 /**
- * Affiche la question avec les 4 réponses tant que l'index est inférieur au nombre de questions
+ * Affiche la question avec les 4 réponses tant que l'index est inférieur au nombre de questions + affichage 
+ * du compte à rebours // quand index est supérieur au nombre de questions : affichage du score et du message 
+ * personnalisé
  */
 function content() {
     if (index < quizname.length) {
@@ -241,7 +243,7 @@ function quizChoice() {
             loadGame(event)
             content()
             refreshAddEventListener()
-            rematch() 
+            rematch()
             progression()
             ScoreContent()
             styleNavBar()
