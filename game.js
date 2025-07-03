@@ -50,7 +50,10 @@ function content() {
     disableCadrequestion()
 }
 
-
+/**
+ * Affichage du compte à rebours quand index inf au nombre de questions et quand index sup aux nombres
+ * de questions désactive les boutons réponses et active le bouton suivant
+ */
 function affichageCompteARebours() {
     const timer = document.getElementById('timer')
     timer.innerText = `Temps restant : ${startTimer}`
@@ -147,7 +150,9 @@ function disableCadrequestion() {
 
 }
 
-
+/**
+ * Affichage ou non de l'encadrer de score
+ */
 function ScoreContent() {
     if (index < quizname.length) {
         divScore.style.display = 'none'
@@ -156,7 +161,9 @@ function ScoreContent() {
     }
 }
 
-
+/**
+ * Affichage de la barre de progression selon l'index
+ */
 function progression() {
 
     if (index < quizname.length) {
@@ -183,7 +190,9 @@ function accueil() {
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "50px"))
 }
 
-
+/**
+ * Changement de style de la barre de navigation 
+ */
 function styleNavBar() {
     document.getElementById("div_nav").style.height = "27px"
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "0px"))
