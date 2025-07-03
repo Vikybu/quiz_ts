@@ -64,15 +64,14 @@ body {
 }
 
 progress[value]::-webkit-progress-bar {
-  border-radius: 10em;
-  background: var(--background);
+    border-radius: 10em;
+    background: var(--background);
 }
 
 progress[value]::-webkit-progress-value {
-  border-radius: 10em;
-  background: var(--color);
+    border-radius: 10em;
+    background: var(--color);
 }
-
 
 /*CSS QUIZ MUSIK*/
 
