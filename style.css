@@ -51,27 +51,26 @@ body {
 #progression[value] {
   --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,#0003 0 10px,#0000 0 20px),
     #31c6f7;
-  --background: lightgrey; 
- -webkit-appearance:none;
-  -moz-appearance:none;        
-  appearance: none;
-  display: flex;
-  border: none; 
-  width: 200px;
-  border-radius: 10em;
-  background: var(--color);
+    --background: lightgrey; 
+    -webkit-appearance:none;
+    -moz-appearance:none;        
+    appearance: none;
+    display: flex;
+    border: none; 
+    width: 200px;
+    border-radius: 10em;
+    background: var(--color);
 }
 
 progress[value]::-webkit-progress-bar {
-  border-radius: 10em;
-  background: var(--background);
+    border-radius: 10em;
+    background: var(--background);
 }
 
 progress[value]::-webkit-progress-value {
-  border-radius: 10em;
-  background: var(--color);
+    border-radius: 10em;
+    background: var(--color);
 }
-
 
 /*CSS QUIZ MUSIK*/
 
@@ -407,29 +406,6 @@ progress[value]::-webkit-progress-value {
     font-family: "Quintessential", serif;
 }
 
-#progression[value] {
-    --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,rgba(225, 7, 7, 0.545) 0 10px,#0000 0 20px),
-    #31c6f7;
-    --background: lightgrey; 
-    -webkit-appearance:none;
-    -moz-appearance:none;        
-    appearance: none;
-    display: flex;
-    border: none; 
-    width: 200px;
-    border-radius: 10em;
-    background: var(--color);
-}
-
-progress[value]::-webkit-progress-bar {
-    border-radius: 10em;
-    background: var(--background);
-}
-
-progress[value]::-webkit-progress-value {
-    border-radius: 10em;
-    background: var(--color);
-}
 
 #div_body.hp #score {
     display: none;
