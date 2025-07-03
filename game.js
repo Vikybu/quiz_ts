@@ -42,7 +42,7 @@ function content() {
         })
     } else {
         scoreDisplay()
-        clearScoreContent()
+        ScoreContent()
     }
 
     disableCadrequestion()
@@ -146,7 +146,7 @@ function disableCadrequestion() {
 }
 
 
-function clearScoreContent() {
+function ScoreContent() {
     if (index < quizname.length) {
         divScore.style.display = 'none'
     } else {
@@ -241,9 +241,9 @@ function quizChoice() {
             loadGame(event)
             content()
             refreshAddEventListener()
-            rematch()
+            rematch() 
             progression()
-            clearScoreContent()
+            ScoreContent()
             styleNavBar()
             divScore.innerText = ''
         })
@@ -253,7 +253,7 @@ function quizChoice() {
 
 export {
     content, nextQuestion, clearQuestion, disabledAnswer, buttonActivation, buttonOff, resetIndex, rematch,
-    disableCadrequestion, accueil, quizChoice, progression, clearScoreContent, styleNavBar
+    disableCadrequestion, accueil, quizChoice, progression, ScoreContent, styleNavBar
 }
 
 

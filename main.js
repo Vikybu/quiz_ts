@@ -1,6 +1,6 @@
 
 import { content, nextQuestion, clearQuestion, buttonOff, resetIndex, rematch, disableCadrequestion, accueil, 
-    quizChoice, progression, clearScoreContent } from './game.js'
+    quizChoice, progression, ScoreContent } from './game.js'
 import { refreshAddEventListener, resetScore} from './script.js'
 
 
@@ -29,7 +29,7 @@ btnRematch.addEventListener('click', () => {
     resetScore()
     rematch()
     refreshAddEventListener()
-    clearScoreContent()
+    ScoreContent()
     progression()
 })
 
