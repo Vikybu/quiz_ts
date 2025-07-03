@@ -30,20 +30,6 @@ function content() {
         clearInterval(timeoutID)
         startTimer = 30
         timeoutID = setInterval(affichageCompteARebours, 1000)
-
-        /*
-        clearTimeout(timeoutID);
-        timeoutID = setTimeout(() => {
-            disabledAnswer()
-            buttonActivation()
-            console.log(timeoutID)
-        }, 5000);
-
-        const time = document.createElement('button')
-        time.innerText = timeoutID
-        divTimer.appendChild(time)
-        */
-
         quizname[index].options.forEach(element => {
             const btnAnswer = document.createElement('button')
             btnAnswer.innerText = element
@@ -52,14 +38,16 @@ function content() {
             if (element == quizname[index].correct_answer)
                 btnAnswer.setAttribute('data-id', 'true')
             divResponse.appendChild(btnAnswer)
-            disableCadrequestion()
+            
         })
     } else {
         scoreDisplay()
         clearScoreContent()
-        disableCadrequestion()
     }
+
+    disableCadrequestion()
 }
+
 
 function affichageCompteARebours() {
     const timer = document.getElementById('timer')
@@ -188,7 +176,7 @@ function accueil() {
     btnQuizzic.style.visibility = "visible"
     btnQuizpotter.style.visibility = "visible"
 
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "250px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "420px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "300px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "50px"))
 }
