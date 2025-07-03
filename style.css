@@ -49,8 +49,9 @@ body {
 }
 
 #progression[value] {
-  --color: linear-gradient(#fff8,#fff0), repeating-linear-gradient(135deg,#0003 0 10px,#0000 0 20px),
-    #31c6f7;
+
+    --color: linear-gradient(#fff8,#89aa8d), repeating-linear-gradient(135deg,rgba(0, 0, 0, 0.697) 0 10px,#0000 0 20px),
+    #ED4264;
     --background: lightgrey; 
     -webkit-appearance:none;
     -moz-appearance:none;        

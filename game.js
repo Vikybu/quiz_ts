@@ -5,7 +5,7 @@ import { scoreDisplay, refreshAddEventListener, resetScore } from './script.js'
 let index = 0
 let timeoutID
 let quizname = []
-let startTimer = 15
+let startTimer = 30
 
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
@@ -28,7 +28,7 @@ function content() {
     if (index < quizname.length) {
         question.innerText = quizname[index].text
         clearInterval(timeoutID)
-        startTimer = 15
+        startTimer = 30
         timeoutID = setInterval(affichageCompteARebours, 1000)
 
         /*
@@ -188,7 +188,7 @@ function accueil() {
     btnQuizzic.style.visibility = "visible"
     btnQuizpotter.style.visibility = "visible"
 
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "100px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "250px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "300px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "50px"))
 }
