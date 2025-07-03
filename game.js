@@ -5,7 +5,7 @@ import { scoreDisplay, refreshAddEventListener, resetScore } from './script.js'
 let index = 0
 let timeoutID
 let quizname = []
-let startTimer = 15
+let startTimer = 30
 
 const question = document.querySelector('.question')
 const divResponse = document.querySelector('.option')
@@ -28,7 +28,7 @@ function content() {
     if (index < quizname.length) {
         question.innerText = quizname[index].text
         clearInterval(timeoutID)
-        startTimer = 15
+        startTimer = 30
         timeoutID = setInterval(affichageCompteARebours, 1000)
 
         /*

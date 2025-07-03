@@ -47,7 +47,7 @@ export const quizzic =
 export const quizpotter =
     [
         {
-            text: "Combien d'Horcruxe possédait Celui-dont-on-ne-doit-pas-prononcer-le-nom ?",
+            text: "Combien d’horcruxes possédait Celui-dont-on-ne-doit-pas-prononcer-le-nom ?",
             options: [
                 "5",
                 "6",
