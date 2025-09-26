@@ -19,6 +19,7 @@ const divScore = document.getElementById('score')
 const divTimer = document.getElementById('timer')
 const title_quizzic = document.getElementById('title_quizzic')
 const title_quizpotter = document.getElementById('title_quizpotter')
+const divRegles = document.getElementById('div_regles')
 
 
 /**
@@ -184,20 +185,20 @@ function accueil() {
     body.style.visibility = "hidden"
     btnQuizzic.style.visibility = "visible"
     btnQuizpotter.style.visibility = "visible"
+    divRegles.style.visibility = "visible"
 
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "420px"))
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "300px"))
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "50px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "5%"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "3%"))
 }
 
 /**
  * Changement de style de la barre de navigation 
  */
 function styleNavBar() {
-    document.getElementById("div_nav").style.height = "27px"
+    document.getElementById("div_nav").style.height = "5%"
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "0px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "0px"))
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "15px"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "2%"))
 }
 
 /**
@@ -217,6 +218,7 @@ function loadGame(event) {
         }
         divGlobale.classList.add('musik')
         divNav.classList.add('musik')
+        body.style.background = 'linear-gradient(0.25turn, #ED4264, #ebf8e1, #FFEDBC)'
     } else {
         quizname = quizpotter
         title_quizpotter.style.display = "flex"
@@ -227,6 +229,7 @@ function loadGame(event) {
         }
         divGlobale.classList.add('hp')
         divNav.classList.add('hp')
+        body.style.background = 'linear-gradient(0.25turn,#6cb474, #abd29c)'
     }
     body.style.visibility = "visible"
 }
@@ -257,6 +260,7 @@ function quizChoice() {
             ScoreContent()
             styleNavBar()
             divScore.innerText = ''
+            divRegles.style.display = "none"
         })
     }
 }
