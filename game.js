@@ -187,7 +187,7 @@ function accueil() {
     btnQuizpotter.style.visibility = "visible"
     divRegles.style.visibility = "visible"
 
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "5%"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "3%"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "3%"))
 }
 
@@ -195,10 +195,10 @@ function accueil() {
  * Changement de style de la barre de navigation 
  */
 function styleNavBar() {
-    document.getElementById("div_nav").style.height = "5%"
+    document.getElementById("div_nav").style.height = "3%"
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginTop = "0px"))
     document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.marginLeft = "0px"))
-    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "2%"))
+    document.querySelectorAll(".btn_choix_quiz").forEach((element => element.style.padding = "1%"))
 }
 
 /**

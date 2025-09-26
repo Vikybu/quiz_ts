@@ -106,17 +106,18 @@ progress[value]::-webkit-progress-value {
     font-family: "Audiowide", sans-serif;
     font-weight: 400;
     font-style: normal;
-    height: 100px;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: auto;
     font-size:clamp(2rem, 5vw, 4rem);
+    margin-bottom: 3vh;
 }
 
 #div_body.musik .question {
     margin-top: 3vh;
-    height: 7vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,14 +172,12 @@ progress[value]::-webkit-progress-value {
     transform: translateY(-8px);
 }
 
-#div_body.musik .option {
-    height: 200px;
+.option {
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 30px;
-    font-family: "Rationale", sans-serif;
 }
 
 #div_body.musik .container_btn_suivant_replay {
@@ -186,14 +185,13 @@ progress[value]::-webkit-progress-value {
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    margin-top: 5vh;
 }
 
 
 #div_body.musik .btn_suivant,
 #div_body.musik .btn_replay {
     border-radius: 15% 15% 15% 15%;
-    height: 7vh;
+    height: 10vh;
     width: 20vw;
     background-color: #FF4F79;
     color: white;
@@ -208,30 +206,17 @@ progress[value]::-webkit-progress-value {
     transform: translateY(-4px);
 }
 
-#div_body.musik .container_btn_suivant_replay {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin-top: 5vh;
-}
 
 #score {
     display: flex;
     flex-direction: center;
     align-items: center;
     margin: auto;
-}
-
-#div_body.musik #score {
     display: none;
     color: black;
     text-align: center;
     justify-content: center;
-    font-family: "Rationale", sans-serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    background: linear-gradient(0.25turn, #ED4264, #ebf8e1, #FFEDBC);
-    height: 10vh;
+    height: 15vh;
     width: 70vw;
     padding-top: 0px;
     margin-top: -50px;
@@ -239,6 +224,14 @@ progress[value]::-webkit-progress-value {
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
     font-weight: 500;
     font-size: 35px;
+}
+
+#div_body.musik #score {
+
+    font-family: "Rationale", sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    background: linear-gradient(0.25turn, #ED4264, #ebf8e1, #FFEDBC);
+
 }
 
 
@@ -283,18 +276,18 @@ progress[value]::-webkit-progress-value {
     font-family: "Quintessential", serif;
     font-weight: 600;
     font-style: normal;
-    height: 100px;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: auto;
     font-size:clamp(2rem, 5vw, 4rem);
+    margin-bottom: 3vh;
 }
 
 #div_body.hp .question {
     background: linear-gradient(0.25turn,#ccfcfc,#e8b639);
-    margin-top: 3vh;
-    height: 7vh;
+    height: 10vh;
     width: 90vw;
     display: flex;
     align-items: center;
@@ -336,33 +329,23 @@ progress[value]::-webkit-progress-value {
     transform: translateY(-8px);
 }
 
-#div_body.hp .option {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 30px;
-}
-
 
 #div_body.hp .container_btn_suivant_replay {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    margin-top: 5vh;
 }
 
 #div_body.hp .btn_suivant,
 #div_body.hp .btn_replay {
+    line-height: 9vh;
+    display: flex;            
+    align-items: center;        
+    justify-content: center;
     border-radius: 15% 15% 15% 15%;
-    height: 7vh;
+    height: 9vh;
     width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
     background-color: #6cb474;
     color: black;
     font-size : clamp(1rem, 3vw, 2rem);  
@@ -379,20 +362,10 @@ progress[value]::-webkit-progress-value {
 
 
 #div_body.hp #score {
-    display: none;
-    color: black;
-    text-align: center;
-    justify-content: center;
     font-family: "Quintessential", serif;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     font-weight: 600;
     background: linear-gradient(0.25turn, #e8b639,#ccfcfc);
-    height: 10vh;
-    width: 90vw;
-    padding-top: 0px;
-    margin-top: -50px;
-    border-radius: 15% 15% 15% 15%;
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 319px) and (max-width: 425px) {
@@ -422,5 +395,8 @@ progress[value]::-webkit-progress-value {
         font-size : 1.5rem;
     }
     
+    .option  {
+        height: 45vh;
+    }
 
 }
