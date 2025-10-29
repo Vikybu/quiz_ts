@@ -2,13 +2,15 @@ import { disabledAnswer, buttonActivation, content } from './game.js'
 
 let score = 0
 
-const divScore = document.getElementById('score')
-const timer = document.getElementById('timer')
+const divScore = <HTMLElement>document.getElementById('score')
+const timer = <HTMLElement>document.getElementById('timer')
 
 /*Cette fonction permet de savoir si une réponse est juste ou non. On recup nos boutons avec l'attribue "data-id"
- met des conditions if et else. Simple efficace ! bim bam boomk*/
-function answer(clickBtn) {
-    if (clickBtn.target.getAttribute("data-id") === "true") {
+ met des conditions if et else.*/
+function answer(clickBtn: MouseEvent ) :boolean {
+    const target = clickBtn.target as HTMLButtonElement | null;
+    if (!target) return false;
+    if (target.getAttribute("data-id") === "true") {
         return true
     } else {
         return false
@@ -17,8 +19,8 @@ function answer(clickBtn) {
 
 
 /*Cette fonction recup le btn true et ajoute 1 si cliqué*/
-function scoreCount(clickBtn) {
-    if (answer(clickBtn)) {
+function scoreCount(event: MouseEvent) {
+    if (answer(event)) {
         score++
     }
 }
@@ -55,15 +57,16 @@ function resetScore() {
 clickBtn(APPEL PARAMETRE).target(CIBLE ICI UN BOUTON).getAttribute("data-id")(RECUPERE L'ATTRIBUE ICI "data-id") === "true") 
 et ce qui se passe dans les accolade donc 
 clickBtn(APPEL PARAMETRE).target(CIBLE BOUTON).style(IMPLEMANTE DU CSS).border(VALEUR CSS) = "2px solid green" */
-function answerStyle(clickBtn) {
+function answerStyle(clickBtn: MouseEvent) {
+    const target = clickBtn.target as HTMLButtonElement | null;
     if (answer(clickBtn)) {
-
-        clickBtn.target.style.border = "5px solid green"
-        clickBtn.target.style.backgroundColor = "#E8F5E8"
+        if (!target) return;
+        target.style.border = "5px solid green"
+        target.style.backgroundColor = "#E8F5E8"
     } else {
-
-        clickBtn.target.style.border = "5px solid red"
-        clickBtn.target.style.backgroundColor = "#FFE8E8"
+        if (!target) return;
+        target.style.border = "5px solid red"
+        target.style.backgroundColor = "#FFE8E8"
     }
 }
 
@@ -73,14 +76,13 @@ la var btnAnswer permet de recup tout les bouton ayant la classe '.btn_answer'
 la boucle for nous permet de parcourir tout les boutons
 entre {} les evenements qui s'y passe. Ici on appel 5 functions qui doivent etre appliqué sur nos bouton  */
 function refreshAddEventListener() {
-    const btnAnswer = document.querySelectorAll('.btn_answer')
+    const btnAnswer = document.querySelectorAll<HTMLButtonElement>('.btn_answer')
     for (let i = 0; i < btnAnswer.length; i++) {
-        btnAnswer[i].addEventListener("click", (click) => {
-            scoreCount(click)
-            answerStyle(click)
+        btnAnswer[i].addEventListener("click", (event: MouseEvent) => {
+            scoreCount(event)
+            answerStyle(event)
             disabledAnswer()
             buttonActivation()
-
         })
     }
 }

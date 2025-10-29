@@ -1,5 +1,12 @@
-export const quizzic =
-    [
+interface QuiznameObj {
+  text: string;
+  options: string[];
+  correct_answer: string;
+}
+
+interface Quizname extends Array<QuiznameObj>{}
+
+export let quizzic: Quizname = [ 
         {
             text: "A votre avis, qui est la reine de la musique ?",
             options: [
@@ -44,7 +51,7 @@ export const quizzic =
     ]
 
 
-export const quizpotter =
+export let quizpotter: Quizname = 
     [
         {
             text: "Combien d’horcruxes possédait Celui-dont-on-ne-doit-pas-prononcer-le-nom ?",
